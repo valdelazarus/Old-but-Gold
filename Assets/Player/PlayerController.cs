@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour
     float movement;
 
     public static bool isPunching;
+    public static bool isThrowing;
     bool isJumping;
     bool isOnGround;
+    
 
     void Start()
     {
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         RotateTowardsWalkingDirection();
         ProcessJumping();
         ProcessPunching();
+        ProcessThrowing();
         UpdateAnim();
     }
 
@@ -57,14 +60,25 @@ public class PlayerController : MonoBehaviour
         {
             
             isPunching = true;
-           // anim.SetBool("Punch_b", true);
+           
 
         }
-        else
+        
+
+
+    }
+
+    void ProcessThrowing()
+    {
+
+        if (CrossPlatformInputManager.GetButtonDown("Fire2") && !isThrowing)
         {
-            
-            
+
+            isThrowing = true;
+
+
         }
+
 
 
     }
@@ -78,10 +92,7 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             isOnGround = false;
         }
-        else
-        {
-            isJumping = false;
-        }
+        
   
     }
 
@@ -98,6 +109,7 @@ public class PlayerController : MonoBehaviour
             if (hit.collider != null)
             {
                 isOnGround = true;
+                isJumping = false;
             }
             else {
                 isOnGround = false;
@@ -110,5 +122,12 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed_f", Mathf.Abs(actualSpeed));
         anim.SetBool("Jump_b", isJumping);
         anim.SetBool("Punch_b", isPunching);
+        anim.SetBool("Throw_b", isThrowing);
+    }
+
+    void InstantiateRock(GameObject rock)
+    {
+        Debug.Log("Rock");
+        //Instantiate(rock);
     }
 }
