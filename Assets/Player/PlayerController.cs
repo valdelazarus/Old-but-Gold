@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
 
     Rigidbody rb;
-    Animator anim;
+     Animator anim;
     float actualSpeed;
     float movement;
 
+    public static bool isPunching;
+    public static bool isThrowing;
     bool isJumping;
     bool isOnGround;
+    
 
     void Start()
     {
@@ -33,6 +36,8 @@ public class PlayerController : MonoBehaviour
         ProcessHorizontalMovement();
         RotateTowardsWalkingDirection();
         ProcessJumping();
+        ProcessPunching();
+        ProcessThrowing();
         UpdateAnim();
     }
 
@@ -48,6 +53,36 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, initialYRotation - rotateAmount * movement, 0f);
     }
 
+    void ProcessPunching()
+    {
+       
+        if (CrossPlatformInputManager.GetButtonDown("Fire1") && !isPunching)
+        {
+            
+            isPunching = true;
+           
+
+        }
+        
+
+
+    }
+
+    void ProcessThrowing()
+    {
+
+        if (CrossPlatformInputManager.GetButtonDown("Fire2") && !isThrowing)
+        {
+
+            isThrowing = true;
+
+
+        }
+
+
+
+    }
+
     void ProcessJumping()
     {
         CheckIfOnGround();
@@ -57,10 +92,7 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             isOnGround = false;
         }
-        else
-        {
-            isJumping = false;
-        }
+        
   
     }
 
@@ -77,6 +109,7 @@ public class PlayerController : MonoBehaviour
             if (hit.collider != null)
             {
                 isOnGround = true;
+                isJumping = false;
             }
             else {
                 isOnGround = false;
@@ -88,5 +121,13 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("Speed_f", Mathf.Abs(actualSpeed));
         anim.SetBool("Jump_b", isJumping);
+        anim.SetBool("Punch_b", isPunching);
+        anim.SetBool("Throw_b", isThrowing);
+    }
+
+    void InstantiateRock(GameObject rock)
+    {
+        Debug.Log("Rock");
+        //Instantiate(rock);
     }
 }
