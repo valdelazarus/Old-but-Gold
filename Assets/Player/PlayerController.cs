@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private const float rotateAmount = 90f;
     public float speed;
     public float jumpForce;
-    public float gravityModifier;
+    //public float gravityModifier; REMOVED. NOT NEEDED
 
     Rigidbody rb;
      Animator anim;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public static bool isPunching;
     public static bool isThrowing;
-    bool isJumping;
+    //public bool isJumping; REMOVED. NOT NEEDED
     bool isOnGround;
     
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 
-        Physics.gravity *= gravityModifier;
+        //Physics.gravity *= gravityModifier; REMOVED. NOT NEEDED
     }
 
     
@@ -35,17 +35,22 @@ public class PlayerController : MonoBehaviour
     {
         ProcessHorizontalMovement();
         RotateTowardsWalkingDirection();
-        ProcessJumping();
         ProcessPunching();
         ProcessThrowing();
         UpdateAnim();
+    }
+
+    private void FixedUpdate()
+    {
+        ProcessJumping();
     }
 
     private void ProcessHorizontalMovement()
     {
         movement = CrossPlatformInputManager.GetAxis("Horizontal");
         actualSpeed = movement * speed;
-        rb.velocity = Vector3.right * actualSpeed;
+        //rb.velocity = Vector3.right * actualSpeed; REMOVED/CHANGED SO THAT IT DOESN'T AFFECT THE JUMP VELOCITY, ONLY THE HORIZONTAL MOVEMENT
+        rb.velocity = new Vector3(actualSpeed, rb.velocity.y, 0.0f);
     }
 
     void RotateTowardsWalkingDirection()
@@ -86,11 +91,13 @@ public class PlayerController : MonoBehaviour
     void ProcessJumping()
     {
         CheckIfOnGround();
-        if (CrossPlatformInputManager.GetButtonDown("Jump") && isOnGround && !isJumping)
+        if (Input.GetButtonDown("Jump") && isOnGround)// && !isJumping) REMOVED
         {
-            transform.Translate(Vector3.up * jumpForce * Time.deltaTime);
-            isJumping = true;
+            //transform.Translate(Vector3.up * jumpForce * Time.deltaTime); REMOVED/CHANGED TO ADDFORCE
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            //isJumping = true; REMOVED
             isOnGround = false;
+            anim.SetTrigger("jumped");
         }
         
   
@@ -100,19 +107,27 @@ public class PlayerController : MonoBehaviour
 
     void CheckIfOnGround()
     {
-        Ray ray = new Ray(transform.position, Vector3.down);
+        Ray[] rays = new Ray[3];
+        rays[0] = new Ray(transform.position - Vector3.right * .45f, Vector3.down);
+        rays[1] = new Ray(transform.position, Vector3.down);
+        rays[2] = new Ray(transform.position + Vector3.right * .45f, Vector3.down);
+
         RaycastHit hit;
         float maxD = .1f;
 
-        if (Physics.Raycast(ray, out hit, maxD))
+        foreach (Ray ray in rays)
         {
-            if (hit.collider != null)
+            if (Physics.Raycast(ray, out hit, maxD))
             {
-                isOnGround = true;
-                isJumping = false;
-            }
-            else {
-                isOnGround = false;
+                if (hit.collider != null)
+                {
+                    isOnGround = true;
+                    //isJumping = false; REMOVED
+                }
+                else
+                {
+                    isOnGround = false; 
+                }
             }
         }
     }
@@ -120,7 +135,7 @@ public class PlayerController : MonoBehaviour
     void UpdateAnim()
     {
         anim.SetFloat("Speed_f", Mathf.Abs(actualSpeed));
-        anim.SetBool("Jump_b", isJumping);
+        //anim.SetBool("Jump_b", isJumping); REMOVED
         anim.SetBool("Punch_b", isPunching);
         anim.SetBool("Throw_b", isThrowing);
     }
