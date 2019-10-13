@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     //public float gravityModifier; REMOVED. NOT NEEDED
+    
+    public GameObject rockPrefab;
+    public GameObject rockSpawn;
+    public float rockSpeed = 5.0f;
 
     Rigidbody rb;
      Animator anim;
@@ -81,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
             isThrowing = true;
 
-
+            ThrowRock(); 
         }
 
 
@@ -140,9 +144,13 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Throw_b", isThrowing);
     }
 
-    void InstantiateRock(GameObject rock)
+    void ThrowRock() // CHANGED: InstantiateRock to ThrowRock,  and  REMOVED: (GameObject rock)
     {
         Debug.Log("Rock");
         //Instantiate(rock);
+        GameObject r = (GameObject)Instantiate(rockPrefab, transform.position, transform.rotation);
+        Rigidbody rb = r.GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * rockSpeed;
+        Destroy(r, 10); // Destroy rock after n seconds
     }
 }
