@@ -5,11 +5,11 @@ using UnityEngine;
 public class Ranged : MonoBehaviour
 {
     private Vector3 target;
-    public GameObject player;
+    public GameObject player; // Leave empty
     public GameObject crosshairs;
     //public GameObject rockPrefab;
     //public GameObject rockSpawn;
-    //public float rockSpeed = 5.0f;
+    //public float rockSpeed = 15.0f;
 
     // Start is called before the first frame update
     void Start()
