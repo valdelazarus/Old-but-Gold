@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     
     public GameObject rockPrefab;
     public GameObject rockSpawn;
-    public float rockSpeed = 5.0f;
+    public float rockSpeed = 15.0f;
 
     Rigidbody rb;
      Animator anim;
@@ -151,6 +151,6 @@ public class PlayerController : MonoBehaviour
         GameObject r = (GameObject)Instantiate(rockPrefab, transform.position, transform.rotation);
         Rigidbody rb = r.GetComponent<Rigidbody>();
         rb.velocity = transform.forward * rockSpeed;
-        Destroy(r, 10); // Destroy rock after n seconds
+        Destroy(r, 3); // Destroy rock after n seconds
     }
 }
