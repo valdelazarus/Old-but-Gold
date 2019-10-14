@@ -1374,11 +1374,10 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
-        functionName: InstantiateRock
+      - time: 0.6699506
+        functionName: ThrowRock
         data: 
-        objectReferenceParameter: {fileID: 1732272334065596, guid: cdcb19fde9e8cba40b7bff849baf2c1b,
-          type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

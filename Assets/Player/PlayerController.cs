@@ -14,10 +14,11 @@ public class PlayerController : MonoBehaviour
     public GameObject rockPrefab;
     public GameObject rockSpawn;
     public float rockSpeed = 15.0f;
+    public GameObject rightHand;
 
-    public GameObject rockPrefab;
-    public GameObject rockSpawn;
-    public float rockSpeed = 15.0f;
+   // public GameObject rockPrefab;
+   // public GameObject rockSpawn;
+   // public float rockSpeed = 15.0f;
 
     Rigidbody rb;
      Animator anim;
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-
+        anim.SetLayerWeight(1, 1);//activate throwing layer to keep running
         //Physics.gravity *= gravityModifier; REMOVED. NOT NEEDED
     }
 
@@ -88,8 +89,7 @@ public class PlayerController : MonoBehaviour
         {
 
             isThrowing = true;
-
-            ThrowRock(); 
+            //ThrowRock();//CHANGED: now called by animation event for perfect timing
         }
 
 
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Rock");
         //Instantiate(rock);
-        GameObject r = (GameObject)Instantiate(rockPrefab, transform.position, transform.rotation);
+        GameObject r = (GameObject)Instantiate(rockPrefab, rightHand.transform.position, transform.rotation);//changed to originate from player hand
         Rigidbody rb = r.GetComponent<Rigidbody>();
         rb.velocity = transform.forward * rockSpeed;
         Destroy(r, 3); // Destroy rock after n seconds
