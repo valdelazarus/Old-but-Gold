@@ -14,7 +14,7 @@ public class HUDManager : MonoBehaviour
     void Start()
     {
       //  healthBarSlider = healthBar.GetComponent<Slider>();
-        coinBarText = coinBar.GetComponentInChildren<Text>();
+      //  coinBarText = coinBar.GetComponentInChildren<Text>();
     }
 
     public static void RemoveHealth(float amount)
