@@ -13,7 +13,7 @@ public class HUDManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthBarSlider = healthBar.GetComponent<Slider>();
+      //  healthBarSlider = healthBar.GetComponent<Slider>();
         coinBarText = coinBar.GetComponentInChildren<Text>();
     }
 
