@@ -291,12 +291,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180856678}
   m_CullTransparentMesh: 0
---- !u!1 &313860521 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7494522455463719191, guid: 2c8892e24937c401581e984a889dab3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 7494522455082644521}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,8 +492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de69bf4aba023f640b796b3ae0eafdff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 313860521}
-  crosshairs: {fileID: 2100462934}
 --- !u!1001 &1055834265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -988,6 +980,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862be21512c45634ebce77a3a685a9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1737371886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7494522455463719279, guid: 2c8892e24937c401581e984a889dab3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7494522455082644521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1744538715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1518,11 @@ PrefabInstance:
       propertyPath: rockSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8306014292470514718, guid: 2c8892e24937c401581e984a889dab3f,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 1737371886}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c8892e24937c401581e984a889dab3f, type: 3}
 --- !u!4 &7494522455082644522 stripped
