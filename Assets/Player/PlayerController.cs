@@ -15,10 +15,6 @@ public class PlayerController : MonoBehaviour
     public GameObject rockSpawn;
     public float rockSpeed = 15.0f;
 
-    public GameObject rockPrefab;
-    public GameObject rockSpawn;
-    public float rockSpeed = 15.0f;
-
     Rigidbody rb;
      Animator anim;
     float actualSpeed;
