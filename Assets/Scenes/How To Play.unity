@@ -434,10 +434,10 @@ MonoBehaviour:
     Interact: E
 
 
-    Punch: K
+    Punch: Mouse 1
 
 
-    Throw a rock: L'
+    Throw a rock: Mouse 2'
 --- !u!222 &1193618092
 CanvasRenderer:
   m_ObjectHideFlags: 0
