@@ -1562,6 +1562,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 109652695}
+    - target: {fileID: 8016349827013745447, guid: 556944220a4684cb49bd23eceaf18f06,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 109652695}
     - target: {fileID: 8016349827013745446, guid: 556944220a4684cb49bd23eceaf18f06,
         type: 3}
       propertyPath: m_SelectedFaces.Array.size
@@ -1597,11 +1602,6 @@ PrefabInstance:
       propertyPath: m_SelectedVertices.Array.data[1]
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 8016349827013745447, guid: 556944220a4684cb49bd23eceaf18f06,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 109652695}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 556944220a4684cb49bd23eceaf18f06, type: 3}
 --- !u!1001 &511106015
@@ -2005,7 +2005,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2091,18 +2090,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 10
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1001702371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8016349827013745442, guid: 556944220a4684cb49bd23eceaf18f06,
@@ -2870,6 +2857,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1143081171}
+    - target: {fileID: 8016349827013745447, guid: 556944220a4684cb49bd23eceaf18f06,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1143081171}
     - target: {fileID: 8016349827013745446, guid: 556944220a4684cb49bd23eceaf18f06,
         type: 3}
       propertyPath: m_SelectedFaces.Array.size
@@ -2905,11 +2897,6 @@ PrefabInstance:
       propertyPath: m_SelectedVertices.Array.data[1]
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 8016349827013745447, guid: 556944220a4684cb49bd23eceaf18f06,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1143081171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 556944220a4684cb49bd23eceaf18f06, type: 3}
 --- !u!1001 &1138240382
@@ -5961,22 +5948,22 @@ PrefabInstance:
     - target: {fileID: 7494522455463947639, guid: 2c8892e24937c401581e984a889dab3f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7494522455463947639, guid: 2c8892e24937c401581e984a889dab3f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7494522455463947639, guid: 2c8892e24937c401581e984a889dab3f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7494522455463947639, guid: 2c8892e24937c401581e984a889dab3f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7494522455463947639, guid: 2c8892e24937c401581e984a889dab3f,
         type: 3}
@@ -5991,7 +5978,7 @@ PrefabInstance:
     - target: {fileID: 7494522455463947639, guid: 2c8892e24937c401581e984a889dab3f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7494522455463947639, guid: 2c8892e24937c401581e984a889dab3f,
         type: 3}

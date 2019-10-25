@@ -5,8 +5,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour
 {
-    private const float initialYRotation = 180f;
-    private const float rotateAmount = 90f;
+    //private const float initialYRotation = 180f;
+    //private const float rotateAmount = 90f;
     public float speed;
     public float jumpForce;
     //public float gravityModifier; REMOVED. NOT NEEDED
@@ -64,7 +64,28 @@ public class PlayerController : MonoBehaviour
 
     void RotateTowardsWalkingDirection()
     {
-        transform.rotation = Quaternion.Euler(0f, initialYRotation - rotateAmount * movement, 0f);
+        //transform.rotation = Quaternion.Euler(0f, initialYRotation - rotateAmount * movement, 0f);
+        float lastMovement = 0;
+        
+        if (movement > 0)
+        {
+            lastMovement = 1f;
+            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+        } else if (movement < 0)
+        {
+            lastMovement = -1f;
+            transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+        } else
+        {
+            if (lastMovement > 0)
+            {
+                transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            }
+            else if (lastMovement < 0)
+            {
+                transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+            }
+        }
     }
 
     void ProcessPunching()
