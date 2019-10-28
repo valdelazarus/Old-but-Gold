@@ -1207,7 +1207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1049011783}
-  sentences: []
   typingSpeed: 0.02
   dialogPanel: {fileID: 372107854}
   continueButton: {fileID: 1661835585}

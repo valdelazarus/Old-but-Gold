@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class DialogTrigger : MonoBehaviour
 {
-    private GameObject dialogManager;
     public string[] sentences;
 
     void OnTriggerEnter(Collider other)
     {
-        GameObject.Find("DialogManager").GetComponent<Dialog>().AddSentences(sentences);
+        GameObject.Find("DialogManager").GetComponent<DialogManager>().AddSentences(sentences);
+        Destroy(gameObject);
     }
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Dialog : MonoBehaviour
+public class DialogManager : MonoBehaviour
 {
     public Text textDisplay;
-    public string[] sentences;
+    private string[] sentences;
     private int index;
     public float typingSpeed;
     public GameObject dialogPanel;
