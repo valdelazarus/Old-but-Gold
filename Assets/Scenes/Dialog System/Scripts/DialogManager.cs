@@ -12,19 +12,12 @@ public class DialogManager : MonoBehaviour
     public GameObject dialogPanel;
     public GameObject continueButton;
 
-    public void AddSentences(string[] sentences)
+    public void ShowDialog(string[] sentences)
     {
         Reset();
         this.sentences = sentences;
         dialogPanel.SetActive(true);
         StartCoroutine(Type());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (textDisplay.text == sentences[index])
-            continueButton.SetActive(true);
     }
 
     void Reset()
@@ -43,6 +36,7 @@ public class DialogManager : MonoBehaviour
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        continueButton.SetActive(true);
     }
 
     public void NextSentence()

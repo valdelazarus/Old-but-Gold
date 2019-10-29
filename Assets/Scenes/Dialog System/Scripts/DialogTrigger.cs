@@ -9,7 +9,10 @@ public class DialogTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        GameObject.Find("DialogManager").GetComponent<DialogManager>().AddSentences(sentences);
-        Destroy(gameObject);
+        if (other.tag == "Player")
+        {
+            GameObject.Find("DialogManager").GetComponent<DialogManager>().ShowDialog(sentences);
+            Destroy(gameObject);
+        }
     }
 }
