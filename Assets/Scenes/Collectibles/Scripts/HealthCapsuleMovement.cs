@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class HealthCapsuleMovement : MonoBehaviour
 {
     private Vector3 startPosition;
     bool up = true;

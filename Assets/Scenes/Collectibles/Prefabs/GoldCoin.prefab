@@ -88,8 +88,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1213912395141434191}
   - component: {fileID: 1213912395141434188}
-  - component: {fileID: 1213912395141434189}
   - component: {fileID: 1213912395141434186}
+  - component: {fileID: 2819129546130663906}
   m_Layer: 0
   m_Name: GoldCoin
   m_TagString: Untagged
@@ -125,18 +125,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.32672337
   m_Center: {x: 0, y: 1.0828276, z: -0.010452628}
---- !u!114 &1213912395141434189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213912395141434190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd82db32955a4074d8e5adaad2b709c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1213912395141434186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,5 +135,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d100a7a5053af2c4ca79c454b6a0d721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2819129546130663906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213912395141434190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1276a98f512513544a5e1e3aa8b62b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

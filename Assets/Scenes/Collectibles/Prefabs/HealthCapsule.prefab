@@ -87,9 +87,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1654923224401175195}
-  - component: {fileID: 7621676143527677044}
   - component: {fileID: 1654923224401175397}
   - component: {fileID: 1654923224401175194}
+  - component: {fileID: 7811106643601283760}
   m_Layer: 0
   m_Name: HealthCapsule
   m_TagString: Untagged
@@ -118,18 +118,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7621676143527677044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654923224401175193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd82db32955a4074d8e5adaad2b709c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1654923224401175397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +145,18 @@ CapsuleCollider:
   m_Height: 2.2709599
   m_Direction: 1
   m_Center: {x: 0.0032310486, y: -0.028430462, z: 0}
+--- !u!114 &7811106643601283760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654923224401175193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801c3fe79b6c1944c8b5ca45a2761fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654923224743148423
 GameObject:
   m_ObjectHideFlags: 0
