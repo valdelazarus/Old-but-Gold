@@ -23,11 +23,9 @@ public class HUDManager : MonoBehaviour
     }
     public static void AddHealth(float amount)
     {
-        /*while (healthBarSlider.value <= (healthBarSlider.value + amount))
-            healthBarSlider.value += 0.05f;*/
-
         healthBarSlider.value += amount;
     }
+
     public static void AddCoins(int amount)
     {
         coinBarText.text = (int.Parse(coinBarText.text) + amount).ToString();

@@ -6366,6 +6366,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthCapsule
       objectReference: {fileID: 0}
+    - target: {fileID: 1654923224401175193, guid: 25e8aefb13fcb13429d5e43cc5b29451,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1654923224401175195, guid: 25e8aefb13fcb13429d5e43cc5b29451,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
     void ProcessPunching()
     {
        
-        if (CrossPlatformInputManager.GetButtonDown("Fire1") && !isPunching)
+        if (CrossPlatformInputManager.GetButtonDown("Fire1") && !isPunching && GameObject.Find("DialoguePanel") == null)
         {
             
             isPunching = true;
