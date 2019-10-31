@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
    // public float rockSpeed = 15.0f;
 
     Rigidbody rb;
-     Animator anim;
+    public static Animator anim;
     float actualSpeed;
     float movement;
 
@@ -178,4 +178,6 @@ public class PlayerController : MonoBehaviour
         rb.velocity = transform.forward * rockSpeed;
         Destroy(r, 3); // Destroy rock after n seconds
     }
+
+
 }

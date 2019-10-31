@@ -20,6 +20,11 @@ public class HUDManager : MonoBehaviour
     public static void RemoveHealth(float amount)
     {
         healthBarSlider.value -= amount;
+
+        if (healthBarSlider.value == 0)
+        {
+            PlayerController.anim.SetBool("isDead",true);
+        }
     }
     public static void AddHealth(float amount)
     {

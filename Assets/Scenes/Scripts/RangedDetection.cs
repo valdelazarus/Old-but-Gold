@@ -23,5 +23,9 @@ public class RangedDetection : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag.Equals("Goblin"))//goblin should play death animation
+        {
+            GoblinBehaviour.IncrementHits(1);//2 hits to kill goblin
+        }
     }
 }

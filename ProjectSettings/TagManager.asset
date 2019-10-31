@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - Bad
   - Powerup
+  - Cell
+  - Rock
+  - Goblin
   layers:
   - Default
   - TransparentFX
