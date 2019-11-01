@@ -171,7 +171,7 @@ public class GoblinBehaviour : MonoBehaviour
    public static void IncrementHits(int hitCount)
     {
         hits += hitCount;
-        if (hits == 3) isDead = true;
+        if (hits == 2) isDead = true;
 
         if (!isDead)
         {

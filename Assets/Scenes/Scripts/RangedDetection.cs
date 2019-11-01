@@ -27,5 +27,7 @@ public class RangedDetection : MonoBehaviour
         {
             GoblinBehaviour.IncrementHits(1);//2 hits to kill goblin
         }
+
+        GetComponent<BoxCollider>().enabled = false; //Removing hit collider so it only hits target once.
     }
 }
