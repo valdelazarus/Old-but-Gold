@@ -28878,8 +28878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862be21512c45634ebce77a3a685a9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  coinBar: {fileID: 0}
+  healthBar: {fileID: 1235504037}
+  coinBar: {fileID: 1339271326}
 --- !u!114 &1438377237
 MonoBehaviour:
   m_ObjectHideFlags: 0
