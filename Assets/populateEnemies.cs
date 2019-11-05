@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class populateEnemies : MonoBehaviour
 {
+    public Transform[] goblinSpawnPoints;//add spawn points as empty game objects in editor
     public GameObject goblin;
+
+    /*
+    public Transform[] pirateSpawnPoints;//add spawn points as empty game objects in editor
+    public GameObject pirate;*/
     // Start is called before the first frame update
     void Start()
     {
-        // Instantiate at position (0, 0, 0) and zero rotation.
-        Instantiate(goblin, new Vector3(-14, 0.3f, 0), Quaternion.identity);
-        Instantiate(goblin, new Vector3(2, 0.3f, 0), Quaternion.identity);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (Transform goblinSpawnPoint in goblinSpawnPoints)
+        {
+            Instantiate(goblin, goblinSpawnPoint.position, Quaternion.identity);
+        }
+        /*Uncomment when ready for pirates
+        foreach (Transform pirateSpawnPoint in pirateSpawnPoints)
+        {
+            Instantiate(goblin, pirateSpawnPoint.position, Quaternion.identity);
+        }
+        */
     }
 }
