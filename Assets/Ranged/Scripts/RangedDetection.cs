@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class RangedDetection : MonoBehaviour
 {
-    public float rockLifeTime; 
+    public float rockLifeTime;
+    private GoblinBehaviour goblin;
+    private PirateBehaviour pirate;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,15 @@ public class RangedDetection : MonoBehaviour
         }
         else if (other.gameObject.tag.Equals("Goblin"))//goblin should play death animation
         {
-            GoblinBehaviour.IncrementHits(1);//2 hits to kill goblin
+            goblin = other.gameObject.GetComponent<GoblinBehaviour>();
+            goblin.IncrementHits(1);//2 hits to kill goblin
+            GetComponent<BoxCollider>().enabled = false; //Removing hit collider so it only hits target once.
+        }
+        else if (other.gameObject.tag.Equals("Pirate"))
+        {
+            pirate = other.gameObject.GetComponent<PirateBehaviour>();
+            pirate.IncrementHits(1);//3 hits to kill pirate
+            GetComponent<BoxCollider>().enabled = false; 
         }
 
         //need to check for hits in goblin/ specific enemy instead - as following line disables above behaviors (eg. no longer destroy enemy on hit)
