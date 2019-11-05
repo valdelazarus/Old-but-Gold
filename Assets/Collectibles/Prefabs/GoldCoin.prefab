@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1213912394135227453}
   - component: {fileID: 1213912394135227448}
   - component: {fileID: 1213912394135227451}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2819129546130663906}
   - component: {fileID: 3260710320564607911}
   - component: {fileID: 527422257521832628}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GoldCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

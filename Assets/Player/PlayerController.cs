@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public float rockSpeed = 15.0f;
     public GameObject rightHand;
 
+    public GameObject punchHitBox;
+
    // public GameObject rockPrefab;
    // public GameObject rockSpawn;
    // public float rockSpeed = 15.0f;
@@ -90,15 +92,15 @@ public class PlayerController : MonoBehaviour
 
     void ProcessPunching()
     {
-       
+
         if (CrossPlatformInputManager.GetButtonDown("Fire1") && !isPunching && GameObject.Find("DialoguePanel") == null)
         {
-            
+
             isPunching = true;
-           
+
 
         }
-        
+
 
 
     }
@@ -179,5 +181,14 @@ public class PlayerController : MonoBehaviour
         Destroy(r, 3); // Destroy rock after n seconds
     }
 
+    public void EnablePunchHitBox()
+    {
+        punchHitBox.SetActive(true);
+    }
+    public void DisablePunchHitBox()
+    {
+        punchHitBox.SetActive(false);
+    }
 
+    
 }

@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockLifeTime: 5
+  rockStrength: 1
 --- !u!1001 &4077016698185344330
 PrefabInstance:
   m_ObjectHideFlags: 0

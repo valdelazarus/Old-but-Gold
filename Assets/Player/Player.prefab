@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1775949544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1775949545}
+  - component: {fileID: 1775949547}
+  - component: {fileID: 1775949546}
+  m_Layer: 0
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1775949545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775949544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7494522455463947605}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1775949547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775949544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.25, z: 0.25}
+  m_Center: {x: 0.1, y: 0, z: 0}
+--- !u!114 &1775949546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775949544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617190fed5f0be144a514e8424c76f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punchStrength: 1
 --- !u!1 &1974385041
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,8 +951,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.072354, z: 1.1554362}
-  m_Center: {x: 7.916968e-17, y: 1.5013472, z: 0.021196067}
+  m_Size: {x: 1, y: 3.072354, z: 0.78786314}
+  m_Center: {x: -0, y: 1.5013472, z: -0.16259044}
 --- !u!54 &7708575433009692389
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -924,12 +982,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 300
+  jumpForce: 310
   rockPrefab: {fileID: 4076424413821283062, guid: 98a28a703dd409546b58c9a2d609e601,
     type: 3}
   rockSpawn: {fileID: 1974385041}
   rockSpeed: 15
   rightHand: {fileID: 7494522455463719279}
+  punchHitBox: {fileID: 1775949544}
+  isPunching: 0
+  isThrowing: 0
 --- !u!1 &7494522455463719197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1201,8 @@ Transform:
   m_LocalRotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: 1.8375893e-15}
   m_LocalPosition: {x: -0.4403, y: -4.8316907e-15, z: 6.780326e-20}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1775949545}
   m_Father: {fileID: 7494522455463905201}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

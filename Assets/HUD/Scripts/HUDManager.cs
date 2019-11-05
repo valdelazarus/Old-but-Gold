@@ -21,9 +21,10 @@ public class HUDManager : MonoBehaviour
     {
         healthBarSlider.value -= amount;
 
-        if (healthBarSlider.value == 0)
+        if (healthBarSlider.value <= 0)
         {
             PlayerController.anim.SetBool("isDead",true);
+            FindObjectOfType<LevelManager>().LoadScene("Game Over");
         }
     }
     public static void AddHealth(float amount)
