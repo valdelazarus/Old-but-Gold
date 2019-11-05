@@ -9,7 +9,6 @@ public class PlayerPunch : MonoBehaviour
     {
         if ( other.gameObject.tag == "Goblin") 
         {
-            Debug.Log("PUNCHE");
             
             GoblinBehaviour.IncrementHits(3);
         }

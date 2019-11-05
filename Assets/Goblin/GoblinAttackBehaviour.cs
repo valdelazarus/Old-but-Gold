@@ -11,4 +11,11 @@ public class GoblinAttackBehaviour : StateMachineBehaviour
         GoblinBehaviour.anim.SetBool("hit", false);
 
     }
+
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+       // GoblinBehaviour.anim.SetBool("Punch_b", false);
+        GoblinBehaviour.anim.SetBool("hit", false);
+
+    }
 }
