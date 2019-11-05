@@ -6,7 +6,7 @@ public class PunchDamage : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && GoblinBehaviour.isPunching)
+        if (other.gameObject.tag == "Player" && this.GetComponentInParent<GoblinBehaviour>().isPunching)
         {
             // Debug.Log("HealthDown");
             HUDManager.RemoveHealth(0.1f);

@@ -29,7 +29,7 @@ public class RangedDetection : MonoBehaviour
         }
         else if (other.gameObject.tag.Equals("Goblin"))//goblin should play death animation
         {
-            GoblinBehaviour.IncrementHits(1);//2 hits to kill goblin
+            other.gameObject.GetComponent<GoblinBehaviour>().IncrementHits(1); //3 hits to kill goblin
         }
 
         //need to check for hits in goblin/ specific enemy instead - as following line disables above behaviors (eg. no longer destroy enemy on hit)

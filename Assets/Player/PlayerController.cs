@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     float actualSpeed;
     float movement;
 
-    public static bool isPunching;
-    public static bool isThrowing;
+    public bool isPunching;
+    public bool isThrowing;
     //public bool isJumping; REMOVED. NOT NEEDED
     bool isOnGround;
     

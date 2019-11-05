@@ -8,7 +8,7 @@ public class GoblinBehaviour : MonoBehaviour
     States currentState = States.Patrol;
     Transform player;
     private int punchType;
-    public static int hits;
+    public int hits;
     private float ChaseDistance = 5;
     private float AttackDistance = 3; 
     private float patrolSpeed = 0.25f; 
@@ -17,10 +17,10 @@ public class GoblinBehaviour : MonoBehaviour
     private bool isPlayerHidden = false;
     private bool canPunch = true;
     private bool isQuitting = false;
-    public static bool isDead;
-    public static bool isPunching;
+    public bool isDead;
+    public bool isPunching;
     public GameObject particles;
-    public static Animator anim;
+    public Animator anim;
     
     
     // Start is called before the first frame update
@@ -79,10 +79,8 @@ public class GoblinBehaviour : MonoBehaviour
 
     void Dead()
     {
-        
             anim.SetBool("isDead", true);
             Invoke("Die", 3);
-        
     }
 
     void Chase()
@@ -168,10 +166,10 @@ public class GoblinBehaviour : MonoBehaviour
         isPlayerHidden = (cosPhi < 0);
     }
 
-   public static void IncrementHits(int hitCount)
+   public void IncrementHits(int hitCount)
     {
         hits += hitCount;
-        if (hits == 2) isDead = true;
+        if (hits == 3) isDead = true;
 
         if (!isDead)
         {
