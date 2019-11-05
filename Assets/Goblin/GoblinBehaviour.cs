@@ -8,7 +8,8 @@ public class GoblinBehaviour : MonoBehaviour
     States currentState = States.Patrol;
     Transform player;
     private int punchType;
-    public  int hits;
+    private  int hits;
+    public int maxHits;
     private float ChaseDistance = 5;
     private float AttackDistance = 3; 
     private float patrolSpeed = 0.25f; 
@@ -22,8 +23,12 @@ public class GoblinBehaviour : MonoBehaviour
     public  bool isHit;
     public GameObject particles;
     public Animator anim;
-    
-    
+
+    public float dmgOnCollide;
+
+    public GameObject punchHitBox;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -179,7 +184,7 @@ public class GoblinBehaviour : MonoBehaviour
     {
         isHit = true;
         hits += hitCount;
-        if (hits >= 2) isDead = true;
+        if (hits >= maxHits) isDead = true;
 
         
     }
@@ -189,7 +194,7 @@ public class GoblinBehaviour : MonoBehaviour
     {
             if (collision.gameObject.tag=="Player")
             {
-            HUDManager.RemoveHealth(0.1f);
+                HUDManager.RemoveHealth(dmgOnCollide);
             //decrease player health
             }
     }
@@ -198,6 +203,9 @@ public class GoblinBehaviour : MonoBehaviour
 
     void Die()
     {
+        //spawn collectibles
+        GetComponent<CollectibleSpawner>().SpawnCollectible(transform.position);
+
         Instantiate(particles, transform.position, transform.rotation);
         Destroy(gameObject);
 
@@ -217,4 +225,13 @@ public class GoblinBehaviour : MonoBehaviour
         isHit = false;
     }
 
+    public void EnablePunchHitBox()
+    {
+        punchHitBox.SetActive(true);
+    }
+
+    public void DisablePunchHitBox()
+    {
+        punchHitBox.SetActive(false);
+    }
 }
