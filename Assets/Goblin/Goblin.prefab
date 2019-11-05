@@ -848,6 +848,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHits: 2
+  ChaseDistance: 5
+  AttackDistance: 3
+  patrolSpeed: 0.25
+  chasingSpeed: 0.5
   isDead: 0
   isPunching: 0
   isHit: 0

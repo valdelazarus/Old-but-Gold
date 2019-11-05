@@ -10,10 +10,10 @@ public class GoblinBehaviour : MonoBehaviour
     private int punchType;
     private  int hits;
     public int maxHits;
-    private float ChaseDistance = 5;
-    private float AttackDistance = 3; 
-    private float patrolSpeed = 0.25f; 
-    private float chasingSpeed = 0.5f;
+    public float ChaseDistance = 5f;
+    public float AttackDistance = 3f; 
+    public float patrolSpeed = 0.25f; 
+    public float chasingSpeed = 0.5f;
     private float d2P;
     private bool isPlayerHidden = false;
     private bool canPunch = true;
@@ -150,16 +150,16 @@ public class GoblinBehaviour : MonoBehaviour
             Invoke("CheckPunch", 2);//can only punch once every 2 seconds
         }
         
-        //move towards player
-        Vector3 dir2P = player.position - transform.position;
-        float dS = chasingSpeed * Time.deltaTime;
-        Vector3 newPos = transform.position + dir2P.normalized * dS;
-        transform.position = newPos;
+        ////move towards player
+        //Vector3 dir2P = player.position - transform.position;
+        //float dS = chasingSpeed * Time.deltaTime;
+        //Vector3 newPos = transform.position + dir2P.normalized * dS;
+        //transform.position = newPos;
 
         //lookat player without rotating
-        transform.LookAt(player);
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-        anim.SetFloat("Speed_f", Mathf.Abs(chasingSpeed));
+        //transform.LookAt(player);
+        //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+        //anim.SetFloat("Speed_f", Mathf.Abs(chasingSpeed));
 
     }
 
