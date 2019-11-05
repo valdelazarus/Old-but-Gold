@@ -8,7 +8,7 @@ public class GoblinBehaviour : MonoBehaviour
     States currentState = States.Patrol;
     Transform player;
     private int punchType;
-    public  int hits;
+    public int hits;
     private float ChaseDistance = 5;
     private float AttackDistance = 3; 
     private float patrolSpeed = 0.25f; 
@@ -84,10 +84,8 @@ public class GoblinBehaviour : MonoBehaviour
 
     void Dead()
     {
-        
             anim.SetBool("isDead", true);
             Invoke("Die", 3);
-        
     }
 
     void Chase()

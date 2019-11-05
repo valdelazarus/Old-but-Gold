@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class PlayerPunch : MonoBehaviour
 {
-    private GoblinBehaviour goblin;
-    private PirateBehaviour pirate;
+    private GameObject player;
+    bool isPunching;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        isPunching = false;
+        GetComponent<BoxCollider>().enabled = false;
+    }
+
+    private void Update()
+    {
+        isPunching = player.GetComponent<PlayerController>().isPunching;
+        if(isPunching)
+            GetComponent<BoxCollider>().enabled = true;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if ( other.gameObject.tag == "Goblin" &&PlayerController.isPunching) 
+        if (other.gameObject.tag == "Goblin")
         {
-            goblin = other.gameObject.GetComponent<GoblinBehaviour>();
-            goblin.IncrementHits(3);
-        }
-        else if (other.gameObject.tag == "Pirate" && PlayerController.isPunching)
-        {
-            pirate = other.gameObject.GetComponent<PirateBehaviour>();
-            pirate.IncrementHits(1);
+            Debug.Log("PUNCHE");
+            other.gameObject.GetComponent<GoblinBehaviour>().IncrementHits(3);
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
