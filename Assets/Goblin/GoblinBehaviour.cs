@@ -89,9 +89,9 @@ public class GoblinBehaviour : MonoBehaviour
 
     void Dead()
     {
-        
-            anim.SetBool("isDead", true);
-            Invoke("Die", 3);
+       
+        anim.SetBool("isDead", true);
+        Invoke("Die", 3);
         
     }
 
@@ -149,17 +149,7 @@ public class GoblinBehaviour : MonoBehaviour
             canPunch = false;
             Invoke("CheckPunch", 2);//can only punch once every 2 seconds
         }
-        
-        ////move towards player
-        //Vector3 dir2P = player.position - transform.position;
-        //float dS = chasingSpeed * Time.deltaTime;
-        //Vector3 newPos = transform.position + dir2P.normalized * dS;
-        //transform.position = newPos;
 
-        //lookat player without rotating
-        //transform.LookAt(player);
-        //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-        //anim.SetFloat("Speed_f", Mathf.Abs(chasingSpeed));
 
     }
 
@@ -205,7 +195,7 @@ public class GoblinBehaviour : MonoBehaviour
     {
         //spawn collectibles
         GetComponent<CollectibleSpawner>().SpawnCollectible(transform.position);
-
+        
         Instantiate(particles, transform.position, transform.rotation);
         Destroy(gameObject);
 

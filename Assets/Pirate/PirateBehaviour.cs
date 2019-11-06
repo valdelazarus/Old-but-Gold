@@ -6,20 +6,18 @@ public class PirateBehaviour : MonoBehaviour
 {
     private enum States { Patrol, Attack, Dead };
     States currentState = States.Patrol;
+    public GameObject parrot;
     Transform player;
-    private int punchType;
     public int hits;
-    private float AttackDistance = 3;
+    private float AttackDistance = 4;
     private float patrolSpeed = 0.5f;
-    private float attackSpeed = 0.5f;
     private float d2P;
-    private bool isPlayerHidden = false;
-    private bool canPunch = true;
-    private bool isQuitting = false;
     public bool isDead;
-    public bool isPunching;
     public bool isHit;
+    public bool canThrow=true;
+    public bool isThrowing = false;
     public GameObject particles;
+    public GameObject rightHand;
     public Animator anim;
 
     private float distanceToTarget;
@@ -46,7 +44,7 @@ public class PirateBehaviour : MonoBehaviour
         {
             ChangeState(States.Dead);
         }
-        if (isHit || isPunching)
+        if (isHit)
         {
             Invoke("ExitState", 0.2f);
         }
@@ -76,8 +74,8 @@ public class PirateBehaviour : MonoBehaviour
     //States
     void Patrol()
     {
-//follow waypoints
-distanceToTarget= Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
+        //follow waypoints
+        distanceToTarget= Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
         if (distanceToTarget <= 0.25f) currentWaypoint++;//next target
         if(currentWaypoint>waypoints.Length-1) currentWaypoint = 0;//restart
 
@@ -86,11 +84,13 @@ distanceToTarget= Vector3.Distance(transform.position, waypoints[currentWaypoint
         float dS = 2 * Time.deltaTime;
         Vector3 newPos = transform.position + dir2W.normalized * dS;
         transform.position = newPos;
+
         //lookat waypoint without rotating
         transform.LookAt(waypoints[currentWaypoint]);
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
         if (d2P <= AttackDistance)
         {
+            canThrow = true;
             ChangeState(States.Attack);
         }
         anim.SetFloat("Speed_f", Mathf.Abs(patrolSpeed));
@@ -113,24 +113,15 @@ distanceToTarget= Vector3.Distance(transform.position, waypoints[currentWaypoint
                 ChangeState(States.Patrol);
             }
 
-        //punch
-        if (canPunch)
+        //Throw Bird
+        if (canThrow)
         {
-            if (punchType == 0)
-            {
-                punchType = 1;
-            }
-            else
-            {
-                punchType = 0;
-            }
-            isPunching = true;
-            anim.SetInteger("Punch_i", punchType);
-            anim.SetBool("Punch_b", isPunching);
-            canPunch = false;
-            Invoke("CheckPunch", 2);//can only punch once every 2 seconds
+            canThrow = false;
+            Invoke("Throw", 2);
         }
 
+        anim.SetFloat("Speed_f", Mathf.Abs(0));
+        /*
         //follow waypoints
         distanceToTarget = Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
         if (distanceToTarget <= 0.25f) currentWaypoint++;//next target
@@ -141,7 +132,7 @@ distanceToTarget= Vector3.Distance(transform.position, waypoints[currentWaypoint
         float dS = 2 * Time.deltaTime;
         Vector3 newPos = transform.position + dir2W.normalized * dS;
         transform.position = newPos;
-
+        */
 
 
         //lookat player without rotating
@@ -150,13 +141,6 @@ distanceToTarget= Vector3.Distance(transform.position, waypoints[currentWaypoint
 
     }
 
-
-
-    private void CheckPunch()
-    {
-
-        canPunch = true;
-    }
 
   
 
@@ -191,15 +175,28 @@ distanceToTarget= Vector3.Distance(transform.position, waypoints[currentWaypoint
 
     void updateAnim()
     {
-        anim.SetBool("Punch_b", isPunching);
+
         anim.SetBool("hit", isHit);
+        anim.SetBool("Throw_b", canThrow);
 
     }
 
     private void ExitState()
     {
-        isPunching = false;
+
         isHit = false;
     }
+    void Throw()
+    {
+        if(currentState==States.Attack)
+        canThrow = true;
+    }
 
+    void ThrowRock()
+    {
+
+        //instantiate bird
+        // Debug.Log("ThrowBird");
+        Instantiate(parrot, rightHand.transform.position, transform.rotation);
+    }
 }
