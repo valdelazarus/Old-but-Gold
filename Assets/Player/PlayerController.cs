@@ -173,12 +173,12 @@ public class PlayerController : MonoBehaviour
 
     void ThrowRock() // CHANGED: InstantiateRock to ThrowRock,  and  REMOVED: (GameObject rock)
     {
-        Debug.Log("Rock");
+        Debug.Log("Rock thrown!");
         //Instantiate(rock);
         GameObject r = (GameObject)Instantiate(rockPrefab, rightHand.transform.position, transform.rotation);//changed to originate from player hand
         Rigidbody rb = r.GetComponent<Rigidbody>();
         rb.velocity = transform.forward * rockSpeed;
-        Destroy(r, 3); // Destroy rock after n seconds
+        Destroy(r, 5); // Destroy rock after n seconds
     }
 
     public void EnablePunchHitBox()
