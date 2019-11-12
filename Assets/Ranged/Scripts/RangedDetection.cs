@@ -11,6 +11,7 @@ public class RangedDetection : MonoBehaviour
     private GoblinBehaviour goblin;
     private PirateBehaviour pirate;
     private ParrotBehaviour parrot;
+    private BatBehaviour bat;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,15 +44,20 @@ public class RangedDetection : MonoBehaviour
         {
             pirate = other.gameObject.GetComponent<PirateBehaviour>();
             pirate.IncrementHits(rockStrength);//3 hits to kill pirate
-            GetComponent<BoxCollider>().enabled = false; 
+            GetComponent<BoxCollider>().enabled = false;
         }
         else if (other.gameObject.tag.Equals("Parrot"))
         {
             parrot = other.gameObject.GetComponent<ParrotBehaviour>();
-            parrot.IncrementHits(rockStrength);//3 hits to kill pirate
+            parrot.IncrementHits(rockStrength);//1 hit to kill parrot
             GetComponent<BoxCollider>().enabled = false;
         }
-
+        else if (other.gameObject.tag.Equals("Bat"))
+        {
+            bat = other.gameObject.GetComponent<BatBehaviour>();
+            bat.IncrementHits(rockStrength);//1 hit to kill bat
+            GetComponent<BoxCollider>().enabled = false;
+        }
         //need to check for hits in goblin/ specific enemy instead - as following line disables above behaviors (eg. no longer destroy enemy on hit)
         //GetComponent<BoxCollider>().enabled = false; //Removing hit collider so it only hits target once.
     }
