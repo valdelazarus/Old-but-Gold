@@ -17,6 +17,8 @@ TagManager:
   - Destructible
   - Bat
   - NPCTest
+  - Drown
+  - Acid
   layers:
   - Default
   - TransparentFX
