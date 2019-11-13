@@ -16,6 +16,7 @@ TagManager:
   - Pirate
   - Destructible
   - Bat
+  - NPCTest
   layers:
   - Default
   - TransparentFX

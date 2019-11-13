@@ -52,6 +52,26 @@ public class PlayerController : MonoBehaviour
         UpdateAnim();
     }
 
+    private void InteractWithNPC()
+    {
+        Vector3 vec = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
+        Debug.DrawRay(vec, transform.forward, Color.green);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(vec, transform.forward, out hitInfo, 1.5f))
+            {
+                // update the tag depending on npc
+                if (hitInfo.collider.tag == "NPCTest")
+                {
+                    string[] sentences = { "Blah", "More diag" }; // should be set in NPC script
+                    GameObject.Find("DialogManager").GetComponent<DialogManager>().ShowDialog(sentences);
+                }
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         ProcessJumping();
