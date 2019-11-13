@@ -24,7 +24,7 @@ public class MysteryDialog : MonoBehaviour
         if (dialogTriggered && !dialogManager.dialogPanel.activeInHierarchy)
         {
             //make ancestor disappear once done with dialogs
-            anim.SetTrigger("Disappear");
+            anim.SetTrigger("Idle");
         }
     }
     public void SetDialogueSentences(string[] sentences)
@@ -43,13 +43,13 @@ public class MysteryDialog : MonoBehaviour
 
 
     //animation event to destroy this object
-    public void SelfDestroy()
+    public void Resume()
     {
         
         SetPlayerSpeed(initialSpeed);
 
         //destroy both parent (the trigger) and this object
-        Destroy(GetComponentInParent<AncestorEventTrigger>().gameObject);
+        //Destroy(GetComponentInParent<MysteryEventTrigger>().gameObject);
     }
 
     void SetPlayerSpeed(float speed)

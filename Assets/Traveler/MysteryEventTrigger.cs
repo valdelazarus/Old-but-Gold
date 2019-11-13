@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MysteryEventTrigger : MonoBehaviour
 {
-    public string[] sentences;//elements 0,1 is not enough coins. elements 1,2 is enough coins
+    public string[] sentences;//elements 0,1 is not enough coins. elements 2,3 is enough coins
     private string[] sentence=new string [2];
     public static int coinTotal;
     MysteryDialog dialog;
@@ -26,21 +26,21 @@ public class MysteryEventTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (coinTotal == secretAmount)
+            if (coinTotal >= secretAmount)
             {
-                sentence[0] = sentences[1];
-                sentence[1] = sentences[2];
+                sentence[0] = sentences[0];
+                sentence[1] = sentences[1];
             }
             else
             {
-                sentence[0] = sentences[3];
-                sentence[1] = sentences[4];
+                sentence[0] = sentences[2];
+                sentence[1] = sentences[3];
             }
             //load sentences into Traveler
             dialog.SetDialogueSentences(sentence);
 
             //enable ancestor ghost with its appearance animation 
-            mysteryAnim.SetTrigger("Appear");
+            mysteryAnim.SetTrigger("Talk");
 
             // end of animation, activate dialog - in AncestorDialog script
 
