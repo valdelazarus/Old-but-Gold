@@ -24,6 +24,10 @@ public class GoblinBehaviour : MonoBehaviour
     public GameObject particles;
     public Animator anim;
 
+    private float distanceToTarget;
+    public Transform[] waypoints;
+    private int currentWaypoint;
+
     public float dmgOnCollide;
 
     public GameObject punchHitBox;
@@ -80,6 +84,22 @@ public class GoblinBehaviour : MonoBehaviour
     //States
     void Patrol()
     {
+        /*
+        //follow waypoints
+        if (distanceToTarget <= 0.25f) currentWaypoint++;//next target
+        if (currentWaypoint > waypoints.Length-1 ) currentWaypoint = 0;//restart
+        distanceToTarget = Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
+        
+
+
+        Vector3 dir2W = waypoints[currentWaypoint].position - transform.position;
+        float dS = 2 * Time.deltaTime;
+        Vector3 newPos = transform.position + dir2W.normalized * dS;
+        transform.position = newPos;
+        
+        //lookat waypoint without rotating
+        transform.LookAt(waypoints[currentWaypoint]);
+        */
         if (d2P <= ChaseDistance)
         {
             ChangeState(States.Chase);
