@@ -31,7 +31,8 @@ public class PlayerController : MonoBehaviour
     public bool isThrowing;
     //public bool isJumping; REMOVED. NOT NEEDED
     bool isOnGround;
-    
+
+    public int punchStrength;
 
     void Start()
     {
@@ -190,5 +191,33 @@ public class PlayerController : MonoBehaviour
         punchHitBox.SetActive(false);
     }
 
-    
+    public void addSpeed(float amount, float speedPowerupTime)
+    {
+        speed += amount;
+        HUDManager.DisplaySpeedPowerup();
+        StartCoroutine(speedPowerupTimer(amount, speedPowerupTime));
+    }
+
+    private IEnumerator speedPowerupTimer(float amount, float speedPowerupTime)
+    {
+        yield return new WaitForSeconds(speedPowerupTime);
+        speed -= amount;
+        HUDManager.HideSpeedPowerup();
+    }
+
+    public void addStrength(int amount, float strengthPowerupTime)
+    {
+        punchStrength += amount;
+        rockPrefab.GetComponent<RangedDetection>().rockStrength += amount;
+        HUDManager.DisplayStrengthPowerup();
+        StartCoroutine(strengthPowerupTimer(amount, strengthPowerupTime));
+    }
+
+    private IEnumerator strengthPowerupTimer(int amount, float strengthPowerupTime)
+    {
+        yield return new WaitForSeconds(strengthPowerupTime);
+        punchStrength -= amount;
+        rockPrefab.GetComponent<RangedDetection>().rockStrength -= amount;
+        HUDManager.HideStrengthPowerup();
+    }
 }

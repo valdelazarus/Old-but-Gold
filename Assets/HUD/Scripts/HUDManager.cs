@@ -7,6 +7,10 @@ public class HUDManager : MonoBehaviour
 {
     public GameObject healthBar;
     public GameObject coinBar;
+    public GameObject speedBar;
+    public GameObject strengthBar;
+    private static Image speedImage;
+    private static Image strengthImage;
     private static Slider healthBarSlider;
     private static Text coinBarText;
 
@@ -15,6 +19,8 @@ public class HUDManager : MonoBehaviour
     {
         healthBarSlider = healthBar.GetComponent<Slider>();
         coinBarText = coinBar.GetComponentInChildren<Text>();
+        speedImage = speedBar.GetComponentInChildren<Image>();
+        strengthImage = strengthBar.GetComponentInChildren<Image>();
     }
 
     public static void RemoveHealth(float amount)
@@ -35,5 +41,25 @@ public class HUDManager : MonoBehaviour
     public static void AddCoins(int amount)
     {
         coinBarText.text = (int.Parse(coinBarText.text) + amount).ToString();
+    }
+
+    public static void DisplaySpeedPowerup()
+    {
+        speedImage.gameObject.SetActive(true);
+    }
+
+    public static void HideSpeedPowerup()
+    {
+        speedImage.gameObject.SetActive(false);
+    }
+
+    public static void DisplayStrengthPowerup()
+    {
+        strengthImage.gameObject.SetActive(true);
+    }
+
+    public static void HideStrengthPowerup()
+    {
+        strengthImage.gameObject.SetActive(false);
     }
 }

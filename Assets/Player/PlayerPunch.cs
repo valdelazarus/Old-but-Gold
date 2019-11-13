@@ -7,13 +7,15 @@ public class PlayerPunch : MonoBehaviour
     private GameObject player;
     bool isPunching;
 
-    public int punchStrength; 
+    private int punchStrength; 
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
         //isPunching = false;
         //GetComponent<BoxCollider>().enabled = false;
+        punchStrength = player.GetComponent<PlayerController>().punchStrength;
     }
 
     private void Update()
@@ -21,6 +23,7 @@ public class PlayerPunch : MonoBehaviour
         //isPunching = player.GetComponent<PlayerController>().isPunching;
         //if(isPunching)
         //    GetComponent<BoxCollider>().enabled = true;
+        punchStrength = player.GetComponent<PlayerController>().punchStrength;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldCoin : MonoBehaviour
+public class SpeedCapsule : MonoBehaviour
 {
+    public float speedAdditive;
+    public float speedPowerupTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class GoldCoin : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            HUDManager.AddCoins(1);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().addSpeed(2, speedPowerupTime);
             Destroy(gameObject);
         }
     }
