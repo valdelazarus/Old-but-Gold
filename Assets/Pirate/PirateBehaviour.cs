@@ -75,19 +75,26 @@ public class PirateBehaviour : MonoBehaviour
     void Patrol()
     {
         //follow waypoints
-        distanceToTarget= Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
-        if (distanceToTarget <= 0.25f) currentWaypoint++;//next target
-        if(currentWaypoint>waypoints.Length-1) currentWaypoint = 0;//restart
 
+        //need to create waypoint game objects in scene then plug in waypoints of this script
+        //otherwise, disable patrol
+        if (waypoints.Length > 0)
+        {
+            Vector3 dir2W = waypoints[currentWaypoint].position - transform.position;
+            float dS = 3f * Time.deltaTime;
+            Vector3 newPos = transform.position + dir2W.normalized * dS;
+            transform.position = newPos;
 
-        Vector3 dir2W = waypoints[currentWaypoint].position - transform.position;
-        float dS = 2 * Time.deltaTime;
-        Vector3 newPos = transform.position + dir2W.normalized * dS;
-        transform.position = newPos;
+            distanceToTarget = Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
+            if (distanceToTarget <= 0.25f) currentWaypoint++;//next target
+            if (currentWaypoint > waypoints.Length - 1) currentWaypoint = 0;//restart
 
-        //lookat waypoint without rotating
-        transform.LookAt(waypoints[currentWaypoint]);
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            //lookat waypoint without rotating
+            transform.LookAt(waypoints[currentWaypoint]);
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+
+        }
+        
         if (d2P <= AttackDistance)
         {
             canThrow = true;

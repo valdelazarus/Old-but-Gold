@@ -84,22 +84,27 @@ public class GoblinBehaviour : MonoBehaviour
     //States
     void Patrol()
     {
-        /*
+
         //follow waypoints
-        if (distanceToTarget <= 0.25f) currentWaypoint++;//next target
-        if (currentWaypoint > waypoints.Length-1 ) currentWaypoint = 0;//restart
-        distanceToTarget = Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
-        
 
+        //need to create waypoint game objects in scene then plug in waypoints of this script
+        //otherwise, disable patrol
+        if (waypoints.Length > 0)
+        {
+            Vector3 dir2W = waypoints[currentWaypoint].position - transform.position;
+            float dS = patrolSpeed * Time.deltaTime;
+            Vector3 newPos = transform.position + dir2W.normalized * dS;
+            transform.position = newPos;
 
-        Vector3 dir2W = waypoints[currentWaypoint].position - transform.position;
-        float dS = 2 * Time.deltaTime;
-        Vector3 newPos = transform.position + dir2W.normalized * dS;
-        transform.position = newPos;
-        
-        //lookat waypoint without rotating
-        transform.LookAt(waypoints[currentWaypoint]);
-        */
+            if (distanceToTarget <= 0.25f) currentWaypoint++;//next target
+            if (currentWaypoint > waypoints.Length - 1) currentWaypoint = 0;//restart
+            distanceToTarget = Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
+
+            //lookat waypoint without rotating
+            transform.LookAt(waypoints[currentWaypoint]);
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+        }
+
         if (d2P <= ChaseDistance)
         {
             ChangeState(States.Chase);

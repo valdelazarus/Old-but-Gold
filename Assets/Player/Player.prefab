@@ -57,7 +57,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617190fed5f0be144a514e8424c76f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punchStrength: 1
 --- !u!1 &1974385041
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,12 +946,12 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494522455463719191}
-  m_Material: {fileID: 13400000, guid: 73e7e8a62f6b74782b8c3252fc2cb046, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.072354, z: 0.78786314}
-  m_Center: {x: -0, y: 1.5013472, z: -0.16259044}
+  m_Size: {x: 1, y: 3.072354, z: 1.646758}
+  m_Center: {x: -0, y: 1.5013472, z: -0.07783955}
 --- !u!54 &7708575433009692389
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -982,7 +981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 310
+  jumpForce: 315
   rockPrefab: {fileID: 4076424413821283062, guid: 98a28a703dd409546b58c9a2d609e601,
     type: 3}
   rockSpawn: {fileID: 1974385041}
@@ -991,6 +990,7 @@ MonoBehaviour:
   punchHitBox: {fileID: 1775949544}
   isPunching: 0
   isThrowing: 0
+  punchStrength: 1
 --- !u!1 &7494522455463719197
 GameObject:
   m_ObjectHideFlags: 0
