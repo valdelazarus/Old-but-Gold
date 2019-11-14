@@ -38862,6 +38862,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 93153385}
   coinBar: {fileID: 1482426003}
+  speedBar: {fileID: 0}
+  strengthBar: {fileID: 0}
 --- !u!114 &1973212110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41224,7 +41226,7 @@ PrefabInstance:
     - target: {fileID: 6356964500902036833, guid: 14b66009577084e4eb124d4a65cd3302,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6356964500902036837, guid: 14b66009577084e4eb124d4a65cd3302,
         type: 3}

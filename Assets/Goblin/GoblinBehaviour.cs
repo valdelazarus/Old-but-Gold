@@ -170,7 +170,7 @@ public class GoblinBehaviour : MonoBehaviour
             Invoke("CheckPunch", 2);//can only punch once every 2 seconds
         }
 
-
+        anim.SetFloat("Speed_f", 0);
     }
 
     
