@@ -850,7 +850,7 @@ MonoBehaviour:
   maxHits: 2
   ChaseDistance: 5
   AttackDistance: 1.5
-  patrolSpeed: 0.25
+  patrolSpeed: 0.5
   chasingSpeed: 0.5
   isDead: 0
   isPunching: 0
@@ -858,7 +858,9 @@ MonoBehaviour:
   particles: {fileID: 2989568622674807258, guid: 275168e176a9c3d4091b4db1502aaa7a,
     type: 3}
   anim: {fileID: 0}
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
   dmgOnCollide: 0.1
   punchHitBox: {fileID: 957321336360671573}
 --- !u!114 &7380489178898479014
