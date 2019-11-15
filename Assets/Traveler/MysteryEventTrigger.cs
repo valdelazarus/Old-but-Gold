@@ -26,15 +26,23 @@ public class MysteryEventTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Debug.Log(coinTotal);
+            Debug.Log(secretAmount);
             if (coinTotal >= secretAmount)
             {
-                sentence[0] = sentences[0];
-                sentence[1] = sentences[1];
+                // sentence[0] = sentences[0];
+                // sentence[1] = sentences[1];
+
+                sentence[0] = "sad...";
+                sentence[1] = "You haven't collected enough coins to hear my secret. Move on.";
             }
             else
             {
-                sentence[0] = sentences[2];
-                sentence[1] = sentences[3];
+                // sentence[0] = sentences[2];
+                // sentence[1] = sentences[3];
+                sentence[0] = "Yes!";
+                sentence[1] = "You've collected enough coins to view my secret path!";
+                //unlock secret path
             }
             //load sentences into Traveler
             dialog.SetDialogueSentences(sentence);
@@ -42,9 +50,6 @@ public class MysteryEventTrigger : MonoBehaviour
             //enable ancestor ghost with its appearance animation 
             mysteryAnim.SetTrigger("Talk");
 
-            // end of animation, activate dialog - in AncestorDialog script
-
-            //Destroy(gameObject,1f); // destroy this trigger once activated
         }
     }
 

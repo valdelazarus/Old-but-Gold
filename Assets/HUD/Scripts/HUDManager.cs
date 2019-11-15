@@ -40,6 +40,7 @@ public class HUDManager : MonoBehaviour
 
     public static void AddCoins(int amount)
     {
+        MysteryEventTrigger.coinTotal++;
         coinBarText.text = (int.Parse(coinBarText.text) + amount).ToString();
     }
 
