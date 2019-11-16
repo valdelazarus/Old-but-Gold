@@ -16,40 +16,35 @@ public class MysteryEventTrigger : MonoBehaviour
         dialog = GetComponentInChildren<MysteryDialog>();
     }
 
-    
-    void Update()
-    {
-        
-    }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" )
         {
-            Debug.Log(coinTotal);
-            Debug.Log(secretAmount);
-            if (coinTotal >= secretAmount)
-            {
-                // sentence[0] = sentences[0];
-                // sentence[1] = sentences[1];
+            //display "Use E"
+           // if (Input.GetKeyDown(KeyCode.E))//removed until interaction text implemented
+           // {
+                if (coinTotal <= secretAmount)
+                {
 
-                sentence[0] = "sad...";
-                sentence[1] = "You haven't collected enough coins to hear my secret. Move on.";
-            }
-            else
-            {
-                // sentence[0] = sentences[2];
-                // sentence[1] = sentences[3];
-                sentence[0] = "Yes!";
-                sentence[1] = "You've collected enough coins to view my secret path!";
-                //unlock secret path
-            }
-            //load sentences into Traveler
-            dialog.SetDialogueSentences(sentence);
+                    Debug.Log("sadSentence");
+                    sentence[0] = sentences[0];
+                    sentence[1] = sentences[1];
+                }
+                else
+                {
+                    Debug.Log("happySentence");
+                    sentence[0] = sentences[2];
+                    sentence[1] = sentences[3];
 
-            //enable ancestor ghost with its appearance animation 
-            mysteryAnim.SetTrigger("Talk");
+                    //unlock secret path here or call void to unlock it
+                }
+                //load sentences into Traveler
+                dialog.SetDialogueSentences(sentence);
 
+
+                mysteryAnim.SetBool("Talk", true);
+          //  }
         }
     }
 

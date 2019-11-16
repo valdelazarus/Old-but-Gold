@@ -29,8 +29,7 @@ public class HUDManager : MonoBehaviour
             numberOfCaptured++;
 
         }
-        //savedPeopleText.text = (saved + "/" + numberOfCaptured);
-        //
+
 
         healthBarSlider = healthBar.GetComponent<Slider>();
         coinBarText = coinBar.GetComponentInChildren<Text>();
