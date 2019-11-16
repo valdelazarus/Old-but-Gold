@@ -74,6 +74,8 @@ public class CapturedWaypoints : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            //add to saved people on HUD
+            HUDManager.AddSaved();
             Instantiate(particles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

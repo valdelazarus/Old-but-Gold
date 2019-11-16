@@ -9,18 +9,41 @@ public class HUDManager : MonoBehaviour
     public GameObject coinBar;
     public GameObject speedBar;
     public GameObject strengthBar;
+    public GameObject savedPeople;
+    public static int numberOfCaptured;
+    private GameObject [] captured;
+    private static int saved=0;
     private static Image speedImage;
     private static Image strengthImage;
     private static Slider healthBarSlider;
     private static Text coinBarText;
+    private static Text savedPeopleText;
 
     // Start is called before the first frame update
     void Start()
     {
+        //find all npcs
+        captured= GameObject.FindGameObjectsWithTag("capturedNPC");
+        foreach(GameObject npc in captured)
+        {
+            numberOfCaptured++;
+
+        }
+        //savedPeopleText.text = (saved + "/" + numberOfCaptured);
+        //
+
         healthBarSlider = healthBar.GetComponent<Slider>();
         coinBarText = coinBar.GetComponentInChildren<Text>();
+        savedPeopleText = savedPeople.GetComponentInChildren<Text>();
         speedImage = speedBar.GetComponentInChildren<Image>();
         strengthImage = strengthBar.GetComponentInChildren<Image>();
+    }
+
+    public static void AddSaved()
+    {
+        saved++;
+
+        savedPeopleText.text = (saved+"/"+numberOfCaptured); 
     }
 
     public static void RemoveHealth(float amount)
@@ -37,6 +60,7 @@ public class HUDManager : MonoBehaviour
     {
         healthBarSlider.value += amount;
     }
+
 
     public static void AddCoins(int amount)
     {
