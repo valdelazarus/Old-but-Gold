@@ -21,6 +21,9 @@ public class HealthCapsule : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //play power up sound
+            FindObjectOfType<PlayerSFX>().PlayPowerUp();
+
             HUDManager.AddHealth(healthAddAmount);
             Destroy(gameObject);
         }

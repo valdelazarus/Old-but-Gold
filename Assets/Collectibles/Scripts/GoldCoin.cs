@@ -20,6 +20,9 @@ public class GoldCoin : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //play coin sound
+            FindObjectOfType<PlayerSFX>().PlayCoin();
+
             HUDManager.AddCoins(1);
             Destroy(gameObject);
         }

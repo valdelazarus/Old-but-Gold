@@ -22,6 +22,9 @@ public class StrengthCapsule : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //play power up sound
+            FindObjectOfType<PlayerSFX>().PlayPowerUp();
+
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().addStrength(2, strengthPowerupTime);
             Destroy(gameObject);
         }

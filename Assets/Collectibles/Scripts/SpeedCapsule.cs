@@ -22,6 +22,9 @@ public class SpeedCapsule : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //play power up sound
+            FindObjectOfType<PlayerSFX>().PlayPowerUp();
+
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().addSpeed(2, speedPowerupTime);
             Destroy(gameObject);
         }

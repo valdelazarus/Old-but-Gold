@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
             isPunching = true;
 
-
+            
         }
 
 
@@ -143,13 +143,16 @@ public class PlayerController : MonoBehaviour
     void ProcessJumping()
     {
         CheckIfOnGround();
-        if (Input.GetButtonDown("Jump") && isOnGround)// && !isJumping) REMOVED
+        if (CrossPlatformInputManager.GetButtonDown("Jump") && isOnGround)// && !isJumping) REMOVED
         {
             //transform.Translate(Vector3.up * jumpForce * Time.deltaTime); REMOVED/CHANGED TO ADDFORCE
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             //isJumping = true; REMOVED
             isOnGround = false;
             anim.SetTrigger("jumped");
+
+            //play jump sound
+            GetComponent<PlayerSFX>().PlayJump();
         }
         
   
@@ -205,6 +208,7 @@ public class PlayerController : MonoBehaviour
     public void EnablePunchHitBox()
     {
         punchHitBox.SetActive(true);
+        GetComponent<PlayerSFX>().PlayPunch();
     }
     public void DisablePunchHitBox()
     {
