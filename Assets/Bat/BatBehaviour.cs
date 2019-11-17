@@ -34,11 +34,16 @@ public class BatBehaviour : MonoBehaviour
 
     private float dmgOnCollide = 0.1f;
 
+    public AudioClip dyingSound;
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
+
         hits = 0;
         startX = transform.localPosition.x;
         leftBoundary = startX - movingDistance;
@@ -132,8 +137,12 @@ public class BatBehaviour : MonoBehaviour
 
     void Die()
     {
-        Instantiate(particles, transform.position, transform.rotation);
-        Destroy(gameObject);
+        //play dying sound
+        source.Pause();
+        source.clip = dyingSound;
+        source.Play();
+
+        Invoke("SelfDestroy", 1f);
     }
 
     void Shoot(Vector3 dir2P)
@@ -160,5 +169,13 @@ public class BatBehaviour : MonoBehaviour
         {
             HUDManager.RemoveHealth(dmgOnCollide);
         }
+    }
+
+    void SelfDestroy()
+    {
+        GetComponent<CollectibleSpawner>().SpawnCollectible(transform.position);
+
+        Instantiate(particles, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

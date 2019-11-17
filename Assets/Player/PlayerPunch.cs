@@ -38,5 +38,18 @@ public class PlayerPunch : MonoBehaviour
             Destroy(other.gameObject);
             //GetComponent<BoxCollider>().enabled = false;
         }
+        else if (other.gameObject.tag.Equals("Pirate"))
+        {
+
+            other.gameObject.GetComponent<PirateBehaviour>().IncrementHits(punchStrength);
+        }
+        else if (other.gameObject.tag.Equals("Parrot"))
+        {
+            other.gameObject.GetComponent<ParrotBehaviour>().IncrementHits(punchStrength);
+        }
+        else if (other.gameObject.tag.Equals("Bat"))
+        {
+            other.gameObject.GetComponent<BatBehaviour>().IncrementHits(punchStrength);
+        }
     }
 }

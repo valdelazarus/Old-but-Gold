@@ -499,9 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 888792094697528267, guid: 457b4f0d5e3524247a28bed5413c5553,
     type: 3}
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoints: []
   patrolSpeed: 1
 --- !u!1 &2257336251936944231
 GameObject:

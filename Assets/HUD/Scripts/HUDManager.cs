@@ -36,6 +36,8 @@ public class HUDManager : MonoBehaviour
         savedPeopleText = savedPeople.GetComponentInChildren<Text>();
         speedImage = speedBar.GetComponentInChildren<Image>();
         strengthImage = strengthBar.GetComponentInChildren<Image>();
+
+        savedPeopleText.text = (saved + "/" + numberOfCaptured);
     }
 
     public static void AddSaved()

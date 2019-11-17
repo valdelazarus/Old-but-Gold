@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CollectibleSpawner : MonoBehaviour
 {
-    public GameObject collectible;
+    public GameObject[] collectibles;
+
+    bool spawned; 
 
     void Start()
     {
@@ -13,6 +15,11 @@ public class CollectibleSpawner : MonoBehaviour
 
     public void SpawnCollectible(Vector3 position)
     {
-        Instantiate(collectible, position + 2* Vector3.up, Quaternion.identity);
+        if (!spawned)
+        {
+            spawned = true;
+            int random = Random.Range(0, collectibles.Length);
+            Instantiate(collectibles[random], position + 1f * Vector3.up, Quaternion.identity);
+        }
     }
 }

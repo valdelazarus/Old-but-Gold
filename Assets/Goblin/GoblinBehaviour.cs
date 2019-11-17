@@ -32,12 +32,17 @@ public class GoblinBehaviour : MonoBehaviour
 
     public GameObject punchHitBox;
 
+    public AudioClip dyingSound;
+    private AudioSource source;
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
+
         hits=0;
     }
 
@@ -114,7 +119,11 @@ public class GoblinBehaviour : MonoBehaviour
 
     void Dead()
     {
-       
+        //play dying sound
+        source.Pause();
+        source.clip = dyingSound;
+        source.Play();
+
         anim.SetBool("isDead", true);
         Invoke("Die", 3);
         

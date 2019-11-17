@@ -174,6 +174,8 @@ public class PirateBehaviour : MonoBehaviour
 
     void Die()
     {
+        GetComponent<CollectibleSpawner>().SpawnCollectible(transform.position);
+
         Instantiate(particles, transform.position, transform.rotation);
         Destroy(gameObject);
 
