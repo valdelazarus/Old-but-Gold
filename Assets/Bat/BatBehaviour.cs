@@ -142,7 +142,7 @@ public class BatBehaviour : MonoBehaviour
         source.clip = dyingSound;
         source.Play();
 
-        Invoke("SelfDestroy", 1f);
+        Invoke("SelfDestroy", 2f);
     }
 
     void Shoot(Vector3 dir2P)
