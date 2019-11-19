@@ -20,7 +20,7 @@ public class DestructibleSpawn: MonoBehaviour
 
     public void spawnItem()
     {
-        GetComponent<MeshCollider>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
         if (item)
         {
             Instantiate(item, transform.position, transform.rotation);
