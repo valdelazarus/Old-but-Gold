@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionBehaviour : MonoBehaviour
+public class ExplosionHazard : MonoBehaviour
 {
     public float power = 500.0f;
     public float radius = 2.0f;
