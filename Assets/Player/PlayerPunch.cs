@@ -35,6 +35,7 @@ public class PlayerPunch : MonoBehaviour
             //GetComponent<BoxCollider>().enabled = false;
         } else if (other.tag == "Destructible")
         {
+            other.gameObject.GetComponent<DestructibleSpawn>().spawnItem();
             Destroy(other.gameObject);
             //GetComponent<BoxCollider>().enabled = false;
         }
@@ -48,6 +49,9 @@ public class PlayerPunch : MonoBehaviour
             other.gameObject.GetComponent<ParrotBehaviour>().IncrementHits(punchStrength);
         }
         else if (other.gameObject.tag.Equals("Bat"))
+        {
+            other.gameObject.GetComponent<BatBehaviour>().IncrementHits(punchStrength);
+        } else if (other.gameObject.tag.Equals("Bat"))
         {
             other.gameObject.GetComponent<BatBehaviour>().IncrementHits(punchStrength);
         }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2380512612646582385}
   - component: {fileID: 2380512612647628595}
   - component: {fileID: 3214893392822493477}
+  - component: {fileID: 2603243007195104726}
   m_Layer: 8
   m_Name: Crate
   m_TagString: Destructible
@@ -92,3 +93,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.554324, y: 1.6206062, z: 1.5543228}
   m_Center: {x: 0, y: 0.8103031, z: 0}
+--- !u!114 &2603243007195104726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380512612645570603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a503ad5c1d44827b97421fa53316e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}

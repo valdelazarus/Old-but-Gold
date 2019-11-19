@@ -12,6 +12,7 @@ public class RangedDetection : MonoBehaviour
     private PirateBehaviour pirate;
     private ParrotBehaviour parrot;
     private BatBehaviour bat;
+    private DestructibleSpawn dest;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,8 @@ public class RangedDetection : MonoBehaviour
             //play on hit sound
             FindObjectOfType<PlayerSFX>().PlayOnHit();
 
+            dest = other.GetComponent<DestructibleSpawn>();
+            dest.spawnItem();
             Destroy(other.gameObject);
         }
         else if (other.gameObject.tag.Equals("Goblin"))//goblin should play death animation
