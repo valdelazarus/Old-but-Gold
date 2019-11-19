@@ -22,6 +22,7 @@ public class HUDManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numberOfCaptured = 0;
         //find all npcs
         captured= GameObject.FindGameObjectsWithTag("capturedNPC");
         foreach(GameObject npc in captured)

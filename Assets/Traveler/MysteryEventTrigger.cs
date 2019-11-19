@@ -17,14 +17,14 @@ public class MysteryEventTrigger : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" )
         {
             //display "Use E"
            // if (Input.GetKeyDown(KeyCode.E))//removed until interaction text implemented
            // {
-                if (coinTotal <= secretAmount)
+                if (coinTotal < secretAmount)
                 {
 
                     Debug.Log("sadSentence");
