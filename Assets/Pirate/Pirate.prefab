@@ -235,6 +235,7 @@ MonoBehaviour:
     type: 3}
   rightHand: {fileID: 1315086169185978589}
   anim: {fileID: 0}
+  throwParrotRate: 5
   waypoints:
   - {fileID: 0}
   - {fileID: 0}

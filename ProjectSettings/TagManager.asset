@@ -20,6 +20,7 @@ TagManager:
   - Drown
   - Acid
   - capturedNPC
+  - Parrot
   layers:
   - Default
   - TransparentFX

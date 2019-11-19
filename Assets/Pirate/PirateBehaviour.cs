@@ -20,6 +20,8 @@ public class PirateBehaviour : MonoBehaviour
     public GameObject rightHand;
     public Animator anim;
 
+    public float throwParrotRate;
+
     private float distanceToTarget;
     public Transform[] waypoints;
     private int currentWaypoint;
@@ -124,7 +126,7 @@ public class PirateBehaviour : MonoBehaviour
         if (canThrow)
         {
             canThrow = false;
-            Invoke("Throw", 2);
+            Invoke("Throw", throwParrotRate);
         }
 
         anim.SetFloat("Speed_f", Mathf.Abs(0));
