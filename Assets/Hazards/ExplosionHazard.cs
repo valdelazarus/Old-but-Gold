@@ -17,7 +17,7 @@ public class ExplosionHazard : MonoBehaviour
 
     void Start()
     {
-        Invoke("Detonate", 5);
+        //Invoke("Detonate", 5);
     }
 
     void Detonate()
@@ -39,5 +39,13 @@ public class ExplosionHazard : MonoBehaviour
             }
         }
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Detonate();
+        }
     }
 }
