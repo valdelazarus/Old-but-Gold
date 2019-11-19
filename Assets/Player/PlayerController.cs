@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isPunching;
     public bool isThrowing;
-    //public bool isJumping; REMOVED. NOT NEEDED
+    public bool canJump;
     bool isOnGround;
 
     public int punchStrength;
@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         anim.SetLayerWeight(1, 1);//activate throwing layer to keep running
+        canJump = true;
         //Physics.gravity *= gravityModifier; REMOVED. NOT NEEDED
     }
 
@@ -143,29 +144,33 @@ public class PlayerController : MonoBehaviour
     void ProcessJumping()
     {
         CheckIfOnGround();
-        if (CrossPlatformInputManager.GetButtonDown("Jump") && isOnGround)// && !isJumping) REMOVED
+        if (CrossPlatformInputManager.GetButtonDown("Jump") && isOnGround && canJump)
         {
+            canJump = false;
             //transform.Translate(Vector3.up * jumpForce * Time.deltaTime); REMOVED/CHANGED TO ADDFORCE
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            //isJumping = true; REMOVED
             isOnGround = false;
             anim.SetTrigger("jumped");
 
             //play jump sound
             GetComponent<PlayerSFX>().PlayJump();
+
+            Invoke("enableJump", 1f);
         }
-        
-  
     }
 
-    
+    void enableJump()
+    {
+        canJump = true;
+    }
 
     void CheckIfOnGround()
     {
-        Ray[] rays = new Ray[3];
-        rays[0] = new Ray(transform.position - Vector3.right * .45f, Vector3.down);
-        rays[1] = new Ray(transform.position, Vector3.down);
-        rays[2] = new Ray(transform.position + Vector3.right * .45f, Vector3.down);
+        Ray[] rays = new Ray[20];
+        for (int i = 0; i < 20; i++)
+        {
+            rays[i] = new Ray(transform.position - Vector3.right + Vector3.right * i * .1f, Vector3.down);
+        }
 
         RaycastHit hit;
         float maxD = .1f;
@@ -174,6 +179,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, maxD))
             {
+                Debug.DrawLine(ray.origin, hit.point, Color.blue);
                 if (hit.collider != null)
                 {
                     isOnGround = true;
