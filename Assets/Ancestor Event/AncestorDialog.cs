@@ -26,6 +26,11 @@ public class AncestorDialog : MonoBehaviour
             //make ancestor disappear once done with dialogs
             anim.SetTrigger("Disappear");
         }
+
+        if (dialogManager.dialogPanel.activeInHierarchy)
+        {
+            SetPlayerSpeed(0);
+        }
     }
     public void SetDialogueSentences(string[] sentences)
     {
