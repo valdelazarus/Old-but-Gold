@@ -45,7 +45,7 @@ public class BatBehaviour : MonoBehaviour
         source = GetComponent<AudioSource>();
 
         hits = 0;
-        startX = transform.localPosition.x;
+        startX = transform.position.x;
         leftBoundary = startX - movingDistance;
         rightBoundary = startX + movingDistance;
         dir = Vector3.left;
@@ -57,7 +57,7 @@ public class BatBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.localPosition.x >= transform.localPosition.x - attackDistance && player.localPosition.x <= transform.localPosition.x + attackDistance)
+        if(player.position.x >= transform.position.x - attackDistance && player.position.x <= transform.position.x + attackDistance)
         {
             ChangeState(States.Attack);
         }
@@ -99,11 +99,11 @@ public class BatBehaviour : MonoBehaviour
 
     void Patrol()
     {
-        if (transform.localPosition.x <= leftBoundary)
+        if (transform.position.x <= leftBoundary)
         {
             dir = Vector3.right;
         }
-        else if(transform.localPosition.x >= rightBoundary)
+        else if(transform.position.x >= rightBoundary)
         {
             dir = Vector3.left;
         }
