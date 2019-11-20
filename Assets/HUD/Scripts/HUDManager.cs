@@ -23,7 +23,7 @@ public class HUDManager : MonoBehaviour
     void Start()
     {
         //find all npcs
-        captured= GameObject.FindGameObjectsWithTag("capturedNPC");
+        captured = GameObject.FindGameObjectsWithTag("capturedNPC");
         foreach(GameObject npc in captured)
         {
             numberOfCaptured++;
