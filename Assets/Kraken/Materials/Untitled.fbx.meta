@@ -1,14 +1,29 @@
 fileFormatVersion: 2
-guid: 427c0aee955c3884babbbf69bf1df4e3
+guid: 3d98475afca793e49b28076cea1b4a71
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1185
+    second: {fileID: 2800000, guid: faed01f78bb87c74093d1a5028bfe7e8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1191
+    second: {fileID: 2800000, guid: ad14d6932c5d7ba4ca82fa9f466ac287, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1195
+    second: {fileID: 2800000, guid: 65b7ed28ce967a24c803781af56205e2, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
