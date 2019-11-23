@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShartBiteMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/Leftfena1
+    m_Weight: 0
+  - m_Path: Armature/Leftfena1/Leftfena2
+    m_Weight: 0
+  - m_Path: Armature/Leftfena1/Leftfena2/Leftfena3
+    m_Weight: 0
+  - m_Path: Armature/Leftfena1/Leftfena2/Leftfena3/Leftfena3_end
+    m_Weight: 0
+  - m_Path: Armature/Righhfena1
+    m_Weight: 0
+  - m_Path: Armature/Righhfena1/Rightfena2
+    m_Weight: 0
+  - m_Path: Armature/Righhfena1/Rightfena2/Rightfena3
+    m_Weight: 0
+  - m_Path: Armature/Righhfena1/Rightfena2/Rightfena3/Rightfena3_end
+    m_Weight: 0
+  - m_Path: Armature/Sharktail0
+    m_Weight: 0
+  - m_Path: Armature/Sharktail0/Sharktail1
+    m_Weight: 0
+  - m_Path: Armature/Sharktail0/Sharktail1/Sharktail2
+    m_Weight: 0
+  - m_Path: Armature/Sharktail0/Sharktail1/Sharktail2/Sharktail3
+    m_Weight: 0
+  - m_Path: Armature/Sharktail0/Sharktail1/Sharktail2/Sharktail3/Sharktail4
+    m_Weight: 0
+  - m_Path: Armature/Sharktail0/Sharktail1/Sharktail2/Sharktail3/Sharktail4/Sharktail4_end
+    m_Weight: 0
+  - m_Path: Armature/Sharkthroat
+    m_Weight: 0
+  - m_Path: Armature/Sharkthroat/SharkHead
+    m_Weight: 1
+  - m_Path: Armature/Sharkthroat/SharkHead/SharkHead_end
+    m_Weight: 0
+  - m_Path: Armature/Sharkthroat/SharkJaw
+    m_Weight: 1
+  - m_Path: Armature/Sharkthroat/SharkJaw/SharkJaw_end
+    m_Weight: 0
+  - m_Path: Camera
+    m_Weight: 0
+  - m_Path: Hemi Light
+    m_Weight: 0
+  - m_Path: Imageplane white
+    m_Weight: 0
+  - m_Path: Parent Sharkbody
+    m_Weight: 0
+  - m_Path: Parent Sharkbody/Sharkjaw
+    m_Weight: 0
+  - m_Path: Sun
+    m_Weight: 0
+  - m_Path: View camera
+    m_Weight: 0
