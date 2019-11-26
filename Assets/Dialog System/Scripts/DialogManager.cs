@@ -11,6 +11,26 @@ public class DialogManager : MonoBehaviour
     public float typingSpeed;
     public GameObject dialogPanel;
     public GameObject continueButton;
+    private GameObject player;
+    private float initialSpeed;
+
+    private void Update()
+    {
+        if (dialogPanel.activeInHierarchy == true)
+        {
+            player.GetComponent<PlayerController>().speed = 0;
+        }
+        else if (dialogPanel.activeInHierarchy == false)
+        {
+            player.GetComponent<PlayerController>().speed = initialSpeed;
+        }
+    }
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        initialSpeed = FindObjectOfType<PlayerController>().speed;
+    }
 
     public void ShowDialog(string[] sentences)
     {
