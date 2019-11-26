@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     public bool canJump;
     bool isOnGround;
 
+    public ParticleSystem dirtParticle;
+
     public int punchStrength;
 
     void Start()
@@ -84,6 +86,7 @@ public class PlayerController : MonoBehaviour
         actualSpeed = movement * speed;
         //rb.velocity = Vector3.right * actualSpeed; REMOVED/CHANGED SO THAT IT DOESN'T AFFECT THE JUMP VELOCITY, ONLY THE HORIZONTAL MOVEMENT
         rb.velocity = new Vector3(actualSpeed, rb.velocity.y, 0.0f);
+        CreateDirtParticle();
     }
 
     void RotateTowardsWalkingDirection()
@@ -122,9 +125,6 @@ public class PlayerController : MonoBehaviour
 
             
         }
-
-
-
     }
 
     void ProcessThrowing()
@@ -136,9 +136,6 @@ public class PlayerController : MonoBehaviour
             isThrowing = true;
             //ThrowRock();//CHANGED: now called by animation event for perfect timing
         }
-
-
-
     }
 
     void ProcessJumping()
@@ -250,4 +247,11 @@ public class PlayerController : MonoBehaviour
         rockPrefab.GetComponent<RangedDetection>().rockStrength -= amount;
         HUDManager.HideStrengthPowerup();
     }
+
+    // Dirt Particle System
+    void CreateDirtParticle()
+    {
+        dirtParticle.Play();
+    }
+
 }
