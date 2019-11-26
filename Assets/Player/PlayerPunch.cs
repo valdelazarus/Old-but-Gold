@@ -51,9 +51,10 @@ public class PlayerPunch : MonoBehaviour
         else if (other.gameObject.tag.Equals("Bat"))
         {
             other.gameObject.GetComponent<BatBehaviour>().IncrementHits(punchStrength);
-        } else if (other.gameObject.tag.Equals("Bat"))
+        }
+        else if (other.gameObject.tag.Equals("Kraken"))
         {
-            other.gameObject.GetComponent<BatBehaviour>().IncrementHits(punchStrength);
+            other.gameObject.GetComponent<KrakenBehaviour>().IncrementHits(punchStrength);
         }
     }
 }

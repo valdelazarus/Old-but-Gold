@@ -21,6 +21,7 @@ TagManager:
   - Acid
   - capturedNPC
   - Parrot
+  - Kraken
   layers:
   - Default
   - TransparentFX
