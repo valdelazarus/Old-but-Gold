@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     public bool canJump;
     bool isOnGround;
 
-    public ParticleSystem dirtParticle;
+    public ParticleSystem dust;
 
     public int punchStrength;
 
@@ -86,7 +86,8 @@ public class PlayerController : MonoBehaviour
         actualSpeed = movement * speed;
         //rb.velocity = Vector3.right * actualSpeed; REMOVED/CHANGED SO THAT IT DOESN'T AFFECT THE JUMP VELOCITY, ONLY THE HORIZONTAL MOVEMENT
         rb.velocity = new Vector3(actualSpeed, rb.velocity.y, 0.0f);
-        CreateDirtParticle();
+
+        CreateDust();
     }
 
     void RotateTowardsWalkingDirection()
@@ -248,10 +249,10 @@ public class PlayerController : MonoBehaviour
         HUDManager.HideStrengthPowerup();
     }
 
-    // Dirt Particle System
-    void CreateDirtParticle()
+    // Dust Particle System
+    void CreateDust()
     {
-        dirtParticle.Play();
+        dust.Play();
     }
 
 }
