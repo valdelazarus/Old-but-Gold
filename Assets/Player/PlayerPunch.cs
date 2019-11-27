@@ -7,7 +7,9 @@ public class PlayerPunch : MonoBehaviour
     private GameObject player;
     bool isPunching;
 
-    private int punchStrength; 
+    private int punchStrength;
+
+    public ParticleSystem wood;
 
     private void Start()
     {
@@ -38,6 +40,7 @@ public class PlayerPunch : MonoBehaviour
             other.gameObject.GetComponent<DestructibleSpawn>().spawnItem();
             Destroy(other.gameObject);
             //GetComponent<BoxCollider>().enabled = false;
+            CreateWood();
         }
         else if (other.gameObject.tag.Equals("Pirate"))
         {
@@ -55,5 +58,11 @@ public class PlayerPunch : MonoBehaviour
         {
             other.gameObject.GetComponent<BatBehaviour>().IncrementHits(punchStrength);
         }
+    }
+
+    // Wood Particle System Effect
+    void CreateWood()
+    {
+        wood.Play();
     }
 }
