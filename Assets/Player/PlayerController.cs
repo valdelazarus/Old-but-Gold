@@ -87,7 +87,10 @@ public class PlayerController : MonoBehaviour
         //rb.velocity = Vector3.right * actualSpeed; REMOVED/CHANGED SO THAT IT DOESN'T AFFECT THE JUMP VELOCITY, ONLY THE HORIZONTAL MOVEMENT
         rb.velocity = new Vector3(actualSpeed, rb.velocity.y, 0.0f);
 
-        CreateDust();
+        if (actualSpeed != 0)
+        {
+            CreateDust();
+        }
     }
 
     void RotateTowardsWalkingDirection()
@@ -154,6 +157,8 @@ public class PlayerController : MonoBehaviour
             GetComponent<PlayerSFX>().PlayJump();
 
             Invoke("enableJump", 1f);
+
+            CreateDust();
         }
     }
 
