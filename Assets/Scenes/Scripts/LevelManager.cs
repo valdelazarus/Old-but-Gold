@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        sceneToLoad = sceneName;
+        sceneToLoad = sceneName;    
         anim.SetTrigger("loadScene");
     }
     public void LoadSelectedScene()
