@@ -87,10 +87,10 @@ public class PlayerController : MonoBehaviour
         //rb.velocity = Vector3.right * actualSpeed; REMOVED/CHANGED SO THAT IT DOESN'T AFFECT THE JUMP VELOCITY, ONLY THE HORIZONTAL MOVEMENT
         rb.velocity = new Vector3(actualSpeed, rb.velocity.y, 0.0f);
 
-        if (speed != 0)
-        {
-            CreateDust();
-        }
+        //if (speed != 0)
+        //{
+        //    CreateDust();
+        //}
     }
 
     void RotateTowardsWalkingDirection()
@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
             Invoke("enableJump", 1f);
 
-            CreateDust();
+            //CreateDust();
         }
     }
 
