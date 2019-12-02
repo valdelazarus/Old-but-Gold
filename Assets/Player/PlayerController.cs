@@ -34,12 +34,17 @@ public class PlayerController : MonoBehaviour
 
     public int punchStrength;
 
+    public static Vector3 respawnPosition;
+    public static bool respawn = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         anim.SetLayerWeight(1, 1);//activate throwing layer to keep running
         canJump = true;
+        if (respawn == true)
+            transform.position = respawnPosition;
         //Physics.gravity *= gravityModifier; REMOVED. NOT NEEDED
     }
 

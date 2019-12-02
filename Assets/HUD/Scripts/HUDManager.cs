@@ -10,6 +10,7 @@ public class HUDManager : MonoBehaviour
     public GameObject speedBar;
     public GameObject strengthBar;
     public GameObject savedPeople;
+    public GameObject liveCount;
     public static int numberOfCaptured;
     private GameObject [] captured;
     private static int saved=0;
@@ -19,11 +20,16 @@ public class HUDManager : MonoBehaviour
     private static Text coinBarText;
     private static Text savedPeopleText;
 
+    public static int numberOfLife;
+    private static Text lifeText;
+
     // Start is called before the first frame update
     void Start()
     {
         numberOfCaptured = 0;
         saved = 0;
+        numberOfLife = 3;
+
 
         //find all npcs
         captured= GameObject.FindGameObjectsWithTag("capturedNPC");
@@ -43,6 +49,15 @@ public class HUDManager : MonoBehaviour
         savedPeopleText.text = (saved + "/" + numberOfCaptured);
     }
 
+    public static void RemoveLives(int amount)
+    {
+        if (healthBarSlider.value <= amount)
+        {
+            numberOfLife--;
+            lifeText.text = (int.Parse(lifeText.text) + amount).ToString();
+        } 
+    }
+
     public static void AddSaved()
     {
         saved++;
@@ -60,6 +75,8 @@ public class HUDManager : MonoBehaviour
             FindObjectOfType<LevelManager>().LoadScene("Game Over");
         }
     }
+    
+    
     public static void AddHealth(float amount)
     {
         healthBarSlider.value += amount;
