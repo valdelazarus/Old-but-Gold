@@ -728,6 +728,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6149001860005403901}
   - component: {fileID: 4314350987172262279}
+  - component: {fileID: 4351552215539709109}
+  - component: {fileID: 8702098134136756196}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Untagged
@@ -770,6 +772,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4351552215539709109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137920928117190382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.5663939, z: 6.188885}
+  m_Center: {x: -3.14885e-15, y: 1.1918216, z: -0.7215805}
+--- !u!114 &8702098134136756196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137920928117190382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22eca36d244414421bfa87d35ebbbdf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  maxPlayerRange: 1
+  maxSwimmingRange: 3
 --- !u!1 &7484793528142099750
 GameObject:
   m_ObjectHideFlags: 0
