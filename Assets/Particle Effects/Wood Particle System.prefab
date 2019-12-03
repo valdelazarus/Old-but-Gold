@@ -25,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6985757301940376466}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.637704, y: 1.2646222, z: 0}
-  m_LocalScale: {x: 1.1204594, y: 1.1204594, z: 1.1204594}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6985757301940376466}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 0.3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -337,7 +337,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -390,7 +390,7 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -744,7 +744,7 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 1
     sphericalDirectionAmount: 0
-    randomPositionAmount: 1
+    randomPositionAmount: 0
     radius:
       value: 1
       mode: 0
@@ -1133,7 +1133,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 1
@@ -3554,7 +3554,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 0

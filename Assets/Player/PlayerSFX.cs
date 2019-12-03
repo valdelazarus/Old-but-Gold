@@ -29,6 +29,7 @@ public class PlayerSFX : MonoBehaviour
         if (gameObject.tag == "Player")
         {
             source.PlayOneShot(footStepClip);
+            GetComponent<PlayerController>().CreateDust();
         }
         
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WateryDeath : MonoBehaviour
 {
-    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +23,6 @@ public class WateryDeath : MonoBehaviour
         {
             Debug.Log("Died a watery death!");
             //Destroy(other.gameObject);
-            Destroy(Player);
             FindObjectOfType<LevelManager>().LoadScene("Game Over");
         }
     }

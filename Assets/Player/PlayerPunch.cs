@@ -9,8 +9,6 @@ public class PlayerPunch : MonoBehaviour
 
     private int punchStrength;
 
-    public ParticleSystem wood;
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -62,9 +60,5 @@ public class PlayerPunch : MonoBehaviour
         }
     }
 
-    // Wood Particle System Effect --> needs to be called in the punching and throwing animation
-    void CreateWood()
-    {
-        wood.Play();
-    }
+    
 }

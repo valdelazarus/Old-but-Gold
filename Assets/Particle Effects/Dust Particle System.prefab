@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6013186449119638035}
-  m_LocalRotation: {x: -0, y: 0.992337, z: 0.123560995, w: 0}
+  m_LocalRotation: {x: 0.000000023136703, y: 0.99233735, z: 0.123558186, w: -0.00000018581865}
   m_LocalPosition: {x: 0, y: 0.85, z: 0.01}
   m_LocalScale: {x: 0.24696922, y: 0.24696913, z: 0.24696918}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -14.195001, y: 270, z: 0}
+  m_LocalEulerAnglesHint: {x: -14.195001, y: 180.00002, z: 0}
 --- !u!198 &6013186449102338147
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6013186449119638035}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 0.2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 30
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -660,7 +660,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 20
+    angle: 12.5
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -734,7 +734,7 @@ ParticleSystem:
     m_SpriteRenderer: {fileID: 0}
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
-    alignToDirection: 0
+    alignToDirection: 1
     m_Texture: {fileID: 0}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1133,7 +1133,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 3
@@ -3554,7 +3554,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 0

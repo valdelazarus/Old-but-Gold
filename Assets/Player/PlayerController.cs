@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     bool isOnGround;
 
     public ParticleSystem dust;
+    public ParticleSystem wood;
 
     public int punchStrength;
 
@@ -91,11 +92,6 @@ public class PlayerController : MonoBehaviour
         actualSpeed = movement * speed;
         //rb.velocity = Vector3.right * actualSpeed; REMOVED/CHANGED SO THAT IT DOESN'T AFFECT THE JUMP VELOCITY, ONLY THE HORIZONTAL MOVEMENT
         rb.velocity = new Vector3(actualSpeed, rb.velocity.y, 0.0f);
-
-        //if (speed != 0)
-        //{
-        //    CreateDust();
-        //}
     }
 
     void RotateTowardsWalkingDirection()
@@ -131,8 +127,6 @@ public class PlayerController : MonoBehaviour
         {
 
             isPunching = true;
-
-            
         }
     }
 
@@ -144,6 +138,7 @@ public class PlayerController : MonoBehaviour
 
             isThrowing = true;
             //ThrowRock();//CHANGED: now called by animation event for perfect timing
+            CreateWood();
         }
     }
 
@@ -163,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
             Invoke("enableJump", 1f);
 
-            //CreateDust();
+            CreateDust();
         }
     }
 
@@ -223,6 +218,7 @@ public class PlayerController : MonoBehaviour
     {
         punchHitBox.SetActive(true);
         GetComponent<PlayerSFX>().PlayPunch();
+        CreateWood();
     }
     public void DisablePunchHitBox()
     {
@@ -260,9 +256,17 @@ public class PlayerController : MonoBehaviour
     }
 
     // Dust Particle System --> needs to be called in the walking and jumping animations
-    void CreateDust()
+    public void CreateDust()
     {
-        dust.Play();
+        if(!dust.isPlaying)
+            dust.Play();
+    }
+
+    // Wood Particle System Effect --> needs to be called in the punching and throwing animation
+    void CreateWood()
+    {
+        if(!wood.isPlaying)
+            wood.Play();
     }
 
 }
