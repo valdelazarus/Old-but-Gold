@@ -54,8 +54,8 @@ public class KrakenBehaviour : MonoBehaviour
         switch (currentState)
         {
             case States.Idle:
-                //StartCoroutine(Idle());
-                Idle();
+                StartCoroutine(Idle());
+                //Idle();
                 break;
             case States.Float:
                 Float();
@@ -81,32 +81,32 @@ public class KrakenBehaviour : MonoBehaviour
         currentState = toState;
     }
 
-    //private IEnumerator Idle()
-    //{
-    //    if (!isIdle)
-    //    {
-    //        anim.SetBool("isIdle", true);
-    //        isIdle = true;
-    //        yield return new WaitForSeconds(10);
-
-    //        isIdle = false;
-    //        anim.SetBool("isIdle", false);
-    //        ChangeState(States.Float);
-    //    }
-    //}
-
-    void Idle()
+    private IEnumerator Idle()
     {
-        anim.SetBool("isIdle", true);
-        isIdle = true;
-
-        if (Vector3.Distance(transform.position, player.position) <= detectRange)
+        if (!isIdle && (Vector3.Distance(transform.position, player.position) <= detectRange))
         {
+            anim.SetBool("isIdle", true);
+            isIdle = true;
+            yield return new WaitForSeconds(10);
+
             isIdle = false;
             anim.SetBool("isIdle", false);
             ChangeState(States.Float);
         }
     }
+
+    //void Idle()
+    //{
+    //    anim.SetBool("isIdle", true);
+    //    isIdle = true;
+
+    //    if (Vector3.Distance(transform.position, player.position) <= detectRange)
+    //    {
+    //        isIdle = false;
+    //        anim.SetBool("isIdle", false);
+    //        ChangeState(States.Float);
+    //    }
+    //}
 
     private void Float()
     {

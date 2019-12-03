@@ -22501,11 +22501,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kraken
       objectReference: {fileID: 0}
-    - target: {fileID: 7818977204279206620, guid: 105be75303d1fa144a605299631ad652,
-        type: 3}
-      propertyPath: detectRange
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105be75303d1fa144a605299631ad652, type: 3}
 --- !u!1001 &1051502308
