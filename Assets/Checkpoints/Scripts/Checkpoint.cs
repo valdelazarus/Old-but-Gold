@@ -22,7 +22,7 @@ public class Checkpoint : MonoBehaviour
         {
             PlayerController.respawnPosition = transform.position;
             PlayerController.respawn = true;
-            GameObject.Find("DialogManager").GetComponent<DialogManager>().ShowDialog(new string[] { "Checkpoint Reached!" });
+            GameObject.Find("DialogManager").GetComponent<DialogManager>().ShowDialog(new string[] { "Checkpoint reached!" });
             Material _myMaterial = GetComponent<Renderer>().material;
             StartCoroutine(FadeTo(_myMaterial, 0f, 1f));
         }
