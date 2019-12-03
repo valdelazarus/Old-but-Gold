@@ -13,7 +13,7 @@ public class HUDManager : MonoBehaviour
     public GameObject liveCount;
     public static int numberOfCaptured;
     private GameObject [] captured;
-    private static int saved=0;
+    public static int saved=0;
     private static Image speedImage;
     private static Image strengthImage;
     private static Slider healthBarSlider;

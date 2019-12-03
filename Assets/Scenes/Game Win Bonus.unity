@@ -907,7 +907,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The treasure is now yours, Avarice.
+  m_Text: Avarice, you have rescued all museum workers. After all, the real treasure
+    is not the gold, but the love for others that you have learned.
 --- !u!222 &1193618092
 CanvasRenderer:
   m_ObjectHideFlags: 0
