@@ -1108,7 +1108,7 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 8770180520547870190}
   projectileSpeed: 1
-  detectRange: 10
+  detectRange: 20
 --- !u!1 &4495206943462377848
 GameObject:
   m_ObjectHideFlags: 0
