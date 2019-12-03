@@ -35,8 +35,7 @@ public class PlayerPunch : MonoBehaviour
             //GetComponent<BoxCollider>().enabled = false;
         } else if (other.tag == "Destructible")
         {
-            other.gameObject.GetComponent<DestructibleSpawn>().spawnItem();
-            //CreateWood();
+            other.gameObject.GetComponent<DestructibleSpawn>().spawnRandomItem();
             Destroy(other.gameObject);
             //GetComponent<BoxCollider>().enabled = false;
             

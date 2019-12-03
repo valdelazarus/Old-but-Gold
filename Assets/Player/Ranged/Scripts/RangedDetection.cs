@@ -38,7 +38,7 @@ public class RangedDetection : MonoBehaviour
             FindObjectOfType<PlayerSFX>().PlayOnHit();
 
             dest = other.GetComponent<DestructibleSpawn>();
-            dest.spawnItem();
+            dest.spawnRandomItem();
             Destroy(other.gameObject);
         }
         else if (other.gameObject.tag.Equals("Goblin"))//goblin should play death animation
