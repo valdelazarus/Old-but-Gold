@@ -22,6 +22,8 @@ public class KrakenBehaviour : MonoBehaviour
     public GameObject projectileSpawn;
     public float projectileSpeed = 5.0f;
 
+    public float detectRange; 
+
     private bool isIdle;
     private bool isChasing;
     private bool isSpinning;
@@ -52,7 +54,8 @@ public class KrakenBehaviour : MonoBehaviour
         switch (currentState)
         {
             case States.Idle:
-                StartCoroutine(Idle());
+                //StartCoroutine(Idle());
+                Idle();
                 break;
             case States.Float:
                 Float();
@@ -78,14 +81,27 @@ public class KrakenBehaviour : MonoBehaviour
         currentState = toState;
     }
 
-    private IEnumerator Idle()
-    {
-        if (!isIdle)
-        {
-            anim.SetBool("isIdle", true);
-            isIdle = true;
-            yield return new WaitForSeconds(10);
+    //private IEnumerator Idle()
+    //{
+    //    if (!isIdle)
+    //    {
+    //        anim.SetBool("isIdle", true);
+    //        isIdle = true;
+    //        yield return new WaitForSeconds(10);
 
+    //        isIdle = false;
+    //        anim.SetBool("isIdle", false);
+    //        ChangeState(States.Float);
+    //    }
+    //}
+
+    void Idle()
+    {
+        anim.SetBool("isIdle", true);
+        isIdle = true;
+
+        if (Vector3.Distance(transform.position, player.position) <= detectRange)
+        {
             isIdle = false;
             anim.SetBool("isIdle", false);
             ChangeState(States.Float);
@@ -180,11 +196,13 @@ public class KrakenBehaviour : MonoBehaviour
     public void StartSpinning()
     {
         isSpinning = true;
+        GetComponent<BoxCollider>().enabled = true;
     }
 
     public void StopSpinning()
     {
         isSpinning = false;
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     private void LookAtPlayer()
@@ -211,5 +229,11 @@ public class KrakenBehaviour : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             HUDManager.RemoveHealth(0.2f);
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectRange);
     }
 }
