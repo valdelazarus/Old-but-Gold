@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crate: {fileID: 2380512612645570603, guid: af9a3b26fa5e14c1da5afc0649172a7b, type: 3}
   sentences:
-  - 'OLD MAN: Wow what is this? Is this a joke to you?'
-  - 'OLD MAN: You could have suffocated me in those boxes!'
-  - 'OLD MAN: Now I really wish I could move in more than one direction'
-  - 'OLD MAN: If I ever get out of this game, you, developers, are in deep trouble...'
+  - 'Avarice: Wow what is this? Is this a joke to you?'
+  - 'Avarice: You could have suffocated me in those boxes!'
+  - 'Avarice: Now I really wish I could move in more than one direction'
+  - 'Avarice: If I ever get out of this game, you, developers, are in deep trouble...'

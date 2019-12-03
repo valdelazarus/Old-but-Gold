@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &377839172581023912
 Transform:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - 'OLD MAN: OH COME ON! This is ridiculous!'
-  - 'OLD MAN: My legs will break when I fall! You are trying to kill me game developers!'
-  - 'OLD MAN: Oh wait.... there is no fall damage...riiiight'
+  - 'Avarice: OH COME ON! This is ridiculous!'
+  - 'Avarice: My legs will break when I fall! You are trying to kill me huh?'
+  - 'Avarice: Oh wait.... there is no fall damage...riiiight'
   activeTime: 8

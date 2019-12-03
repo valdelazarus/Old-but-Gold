@@ -30,16 +30,16 @@ public class CrateSpawnFunny : MonoBehaviour
             Instantiate(crate, new Vector3(player.position.x + 5, player.position.y, player.position.z), Quaternion.identity);
             Instantiate(crate, new Vector3(player.position.x + 5, player.position.y, player.position.z + 3), Quaternion.identity);
             Instantiate(crate, new Vector3(player.position.x + 5, player.position.y, player.position.z - 3), Quaternion.identity);
-            Instantiate(crate, new Vector3(player.position.x + 5, player.position.y + 3, player.position.z), Quaternion.identity);
-            Instantiate(crate, new Vector3(player.position.x + 5, player.position.y + 3, player.position.z -3), Quaternion.identity);
-            Instantiate(crate, new Vector3(player.position.x + 5, player.position.y + 3, player.position.z + 3), Quaternion.identity);
+            //Instantiate(crate, new Vector3(player.position.x + 5, player.position.y + 3, player.position.z), Quaternion.identity);
+            //Instantiate(crate, new Vector3(player.position.x + 5, player.position.y + 3, player.position.z -3), Quaternion.identity);
+            //Instantiate(crate, new Vector3(player.position.x + 5, player.position.y + 3, player.position.z + 3), Quaternion.identity);
 
             Instantiate(crate, new Vector3(player.position.x - 5, player.position.y, player.position.z), Quaternion.identity);
             Instantiate(crate, new Vector3(player.position.x - 5, player.position.y, player.position.z + 3), Quaternion.identity);
             Instantiate(crate, new Vector3(player.position.x - 5, player.position.y, player.position.z - 3), Quaternion.identity);
-            Instantiate(crate, new Vector3(player.position.x - 5, player.position.y + 3, player.position.z), Quaternion.identity);
-            Instantiate(crate, new Vector3(player.position.x - 5, player.position.y + 3, player.position.z - 3), Quaternion.identity);
-            Instantiate(crate, new Vector3(player.position.x - 5, player.position.y + 3, player.position.z + 3), Quaternion.identity);
+            //Instantiate(crate, new Vector3(player.position.x - 5, player.position.y + 3, player.position.z), Quaternion.identity);
+            //Instantiate(crate, new Vector3(player.position.x - 5, player.position.y + 3, player.position.z - 3), Quaternion.identity);
+            //Instantiate(crate, new Vector3(player.position.x - 5, player.position.y + 3, player.position.z + 3), Quaternion.identity);
             Destroy(gameObject);
         }
     }

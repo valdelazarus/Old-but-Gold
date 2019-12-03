@@ -138,9 +138,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToMove: 3
   firstAttemptSentences:
-  - 'OLD MAN: Okay, you think this is funny game developers?'
-  - 'OLD MAN: Why do you feel the need to move the coin?'
+  - 'Avarice: Okay, you think this is funny, game developers?'
+  - 'Avarice: Why do you feel the need to move the coin?'
   secondAttemptSentences:
-  - 'OLD MAN: Seriously? Give. Me. The. Coin.'
+  - 'Avarice: Seriously? Give. Me. The. Coin.'
   thirdAttemptSentences:
-  - 'OLD MAN: Finally. What kind of gold coin teleports anyway?'
+  - 'Avarice: Finally. What kind of gold coin teleports anyway?'
