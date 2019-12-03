@@ -38,7 +38,7 @@ public class PlayerPunch : MonoBehaviour
         } else if (other.tag == "Destructible")
         {
             other.gameObject.GetComponent<DestructibleSpawn>().spawnItem();
-            CreateWood();
+            //CreateWood();
             Destroy(other.gameObject);
             //GetComponent<BoxCollider>().enabled = false;
             
@@ -61,7 +61,7 @@ public class PlayerPunch : MonoBehaviour
         }
     }
 
-    // Wood Particle System Effect
+    // Wood Particle System Effect --> needs to be called in the punching and throwing animation
     void CreateWood()
     {
         wood.Play();

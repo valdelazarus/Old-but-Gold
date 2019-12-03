@@ -17,6 +17,7 @@ public class WateryDeath : MonoBehaviour
         
     }
 
+    // Would like to have a splash of water animation. Same for the acid.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Player"))

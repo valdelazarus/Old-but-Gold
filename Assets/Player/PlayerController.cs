@@ -254,7 +254,7 @@ public class PlayerController : MonoBehaviour
         HUDManager.HideStrengthPowerup();
     }
 
-    // Dust Particle System
+    // Dust Particle System --> needs to be called in the walking and jumping animations
     void CreateDust()
     {
         dust.Play();

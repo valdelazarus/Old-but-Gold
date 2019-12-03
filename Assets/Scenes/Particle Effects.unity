@@ -1160,7 +1160,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1758
+  m_Name: pb_Mesh-1750
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2203,7 +2203,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1384
+  m_Name: pb_Mesh-1376
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2549,7 +2549,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1396
+  m_Name: pb_Mesh-1388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2718,7 +2718,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2132
+  m_Name: pb_Mesh-2126
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3013,7 +3013,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-18486
+  m_Name: pb_Mesh20168
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3659,7 +3659,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1854
+  m_Name: pb_Mesh-1844
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3974,7 +3974,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1726
+  m_Name: pb_Mesh-1718
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4771,7 +4771,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1508
+  m_Name: pb_Mesh-1500
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5395,7 +5395,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1746
+  m_Name: pb_Mesh-1738
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6221,12 +6221,12 @@ PrefabInstance:
     - target: {fileID: 9018286496514072935, guid: 637c7f69a8931354e9914fa0e690c979,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.72
       objectReference: {fileID: 0}
     - target: {fileID: 9018286496514072935, guid: 637c7f69a8931354e9914fa0e690c979,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 9018286496514072935, guid: 637c7f69a8931354e9914fa0e690c979,
         type: 3}
@@ -6291,12 +6291,12 @@ PrefabInstance:
     - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
         type: 3}
       propertyPath: ColorBySpeedModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
         type: 3}
       propertyPath: SizeModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
         type: 3}
@@ -6448,5 +6448,70 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: ShapeModule.alignToDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: ShapeModule.sphericalDirectionAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: ShapeModule.randomPositionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: InheritVelocityModule.m_Curve.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: VelocityModule.radial.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072933, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018286496514072932, guid: 637c7f69a8931354e9914fa0e690c979,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637c7f69a8931354e9914fa0e690c979, type: 3}
