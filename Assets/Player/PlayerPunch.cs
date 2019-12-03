@@ -38,9 +38,10 @@ public class PlayerPunch : MonoBehaviour
         } else if (other.tag == "Destructible")
         {
             other.gameObject.GetComponent<DestructibleSpawn>().spawnItem();
+            CreateWood();
             Destroy(other.gameObject);
             //GetComponent<BoxCollider>().enabled = false;
-            CreateWood();
+            
         }
         else if (other.gameObject.tag.Equals("Pirate"))
         {
