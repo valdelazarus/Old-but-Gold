@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5177454641223494657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535452076346742404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570acec0a5c10064a8afdadddcc2e3cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!1001 &459469693632133847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,12 +23,27 @@ PrefabInstance:
     - target: {fileID: 1382421225540201555, guid: 20c07485fda364c4cbab4a2827e34de8,
         type: 3}
       propertyPath: m_Name
-      value: AcidDeathWaterPlane
+      value: AcidDeathWaterPlane Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1382421225540201555, guid: 20c07485fda364c4cbab4a2827e34de8,
         type: 3}
       propertyPath: m_TagString
       value: Acid
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382421225540201559, guid: 20c07485fda364c4cbab4a2827e34de8,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382421225540201558, guid: 20c07485fda364c4cbab4a2827e34de8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e28f0b395a2b5d044a93c60deb182f98, type: 2}
+    - target: {fileID: 1382421225540201556, guid: 20c07485fda364c4cbab4a2827e34de8,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1382421225540201560, guid: 20c07485fda364c4cbab4a2827e34de8,
         type: 3}
@@ -82,20 +110,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.6685188
       objectReference: {fileID: 0}
-    - target: {fileID: 1382421225540201559, guid: 20c07485fda364c4cbab4a2827e34de8,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1382421225540201558, guid: 20c07485fda364c4cbab4a2827e34de8,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e28f0b395a2b5d044a93c60deb182f98, type: 2}
-    - target: {fileID: 1382421225540201556, guid: 20c07485fda364c4cbab4a2827e34de8,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4185693183155681889, guid: 20c07485fda364c4cbab4a2827e34de8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 20c07485fda364c4cbab4a2827e34de8, type: 3}
+--- !u!1 &1535452076346742404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1382421225540201555, guid: 20c07485fda364c4cbab4a2827e34de8,
+    type: 3}
+  m_PrefabInstance: {fileID: 459469693632133847}
+  m_PrefabAsset: {fileID: 0}

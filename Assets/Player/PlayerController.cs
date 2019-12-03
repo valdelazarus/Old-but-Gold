@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     public bool canJump;
     bool isOnGround;
 
+    public ParticleSystem dust;
+
     public int punchStrength;
 
     public static Vector3 respawnPosition;
@@ -89,6 +91,11 @@ public class PlayerController : MonoBehaviour
         actualSpeed = movement * speed;
         //rb.velocity = Vector3.right * actualSpeed; REMOVED/CHANGED SO THAT IT DOESN'T AFFECT THE JUMP VELOCITY, ONLY THE HORIZONTAL MOVEMENT
         rb.velocity = new Vector3(actualSpeed, rb.velocity.y, 0.0f);
+
+        //if (speed != 0)
+        //{
+        //    CreateDust();
+        //}
     }
 
     void RotateTowardsWalkingDirection()
@@ -127,9 +134,6 @@ public class PlayerController : MonoBehaviour
 
             
         }
-
-
-
     }
 
     void ProcessThrowing()
@@ -141,9 +145,6 @@ public class PlayerController : MonoBehaviour
             isThrowing = true;
             //ThrowRock();//CHANGED: now called by animation event for perfect timing
         }
-
-
-
     }
 
     void ProcessJumping()
@@ -161,6 +162,8 @@ public class PlayerController : MonoBehaviour
             GetComponent<PlayerSFX>().PlayJump();
 
             Invoke("enableJump", 1f);
+
+            //CreateDust();
         }
     }
 
@@ -255,4 +258,11 @@ public class PlayerController : MonoBehaviour
         rockPrefab.GetComponent<RangedDetection>().rockStrength -= amount;
         HUDManager.HideStrengthPowerup();
     }
+
+    // Dust Particle System --> needs to be called in the walking and jumping animations
+    void CreateDust()
+    {
+        dust.Play();
+    }
+
 }

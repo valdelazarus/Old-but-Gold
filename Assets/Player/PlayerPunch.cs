@@ -7,7 +7,9 @@ public class PlayerPunch : MonoBehaviour
     private GameObject player;
     bool isPunching;
 
-    private int punchStrength; 
+    private int punchStrength;
+
+    public ParticleSystem wood;
 
     private void Start()
     {
@@ -36,8 +38,10 @@ public class PlayerPunch : MonoBehaviour
         } else if (other.tag == "Destructible")
         {
             other.gameObject.GetComponent<DestructibleSpawn>().spawnItem();
+            //CreateWood();
             Destroy(other.gameObject);
             //GetComponent<BoxCollider>().enabled = false;
+            
         }
         else if (other.gameObject.tag.Equals("Pirate"))
         {
@@ -56,5 +60,11 @@ public class PlayerPunch : MonoBehaviour
         {
             other.gameObject.GetComponent<KrakenBehaviour>().IncrementHits(punchStrength);
         }
+    }
+
+    // Wood Particle System Effect --> needs to be called in the punching and throwing animation
+    void CreateWood()
+    {
+        wood.Play();
     }
 }
