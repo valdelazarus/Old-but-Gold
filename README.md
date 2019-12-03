@@ -9,6 +9,6 @@ Bonus: different game ending if the player were able to rescue all NPCs that wer
 Lose condition: Player loses all health points. 
 
 Level Design:
-First Cave Area (more paths will be added for the hostages), Cove Area (Mini Boss), Second Cave Area (Final Boss)
+First Cave Area, Cove Area, Second Cave Area
 
 
