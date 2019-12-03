@@ -82,11 +82,19 @@ public class HUDManager : MonoBehaviour
         healthBarSlider.value += amount;
     }
 
-
+    public static int GetCoins()
+    {
+        return int.Parse(coinBarText.text);
+    }
     public static void AddCoins(int amount)
     {
-        MysteryEventTrigger.coinTotal++;
+        //MysteryEventTrigger.coinTotal++;
         coinBarText.text = (int.Parse(coinBarText.text) + amount).ToString();
+    }
+
+    public static void UseCoins(int amount)
+    {
+        coinBarText.text = (int.Parse(coinBarText.text) - amount).ToString();
     }
 
     public static void DisplaySpeedPowerup()

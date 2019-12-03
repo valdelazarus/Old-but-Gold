@@ -347,6 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272dfdc858747b94d95418b8e270e363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogDone: 0
 --- !u!114 &1199026828211095664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,8 +364,9 @@ MonoBehaviour:
   - Sad...
   - You haven't enough coins to hear my secret.
   - Excellent!
-  - You've collected enough coins to hear my secret!
-  secretAmount: 0
+  - You've collected enough coins to unlock the secret!
+  secretAmount: 3
+  pathPosition: {fileID: 0}
 --- !u!65 &1199026828211095666
 BoxCollider:
   m_ObjectHideFlags: 0

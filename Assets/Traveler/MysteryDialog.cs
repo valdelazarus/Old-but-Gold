@@ -12,6 +12,8 @@ public class MysteryDialog : MonoBehaviour
 
     float initialSpeed;
 
+    public bool dialogDone = false;
+
     private void Start()
     {
         dialogManager = FindObjectOfType<DialogManager>();
@@ -25,6 +27,7 @@ public class MysteryDialog : MonoBehaviour
         {
             //make traveler disappear once done with dialogs
             anim.SetTrigger("Idle");
+            dialogDone = true;
         }
     }
     public void SetDialogueSentences(string[] sentences)
@@ -39,6 +42,7 @@ public class MysteryDialog : MonoBehaviour
 
         dialogManager.ShowDialog(sentences);
         dialogTriggered = true;
+        dialogDone = false;
     }
 
     public void Resume()
@@ -46,7 +50,6 @@ public class MysteryDialog : MonoBehaviour
         
         SetPlayerSpeed(initialSpeed);
         anim.SetBool("Talk", false);
-
     }
 
     void SetPlayerSpeed(float speed)
