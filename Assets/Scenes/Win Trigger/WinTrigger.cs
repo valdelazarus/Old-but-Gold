@@ -18,7 +18,7 @@ public class WinTrigger : MonoBehaviour
 
     void TriggerWin()
     {
-        if (HUDManager.saved == HUDManager.numberOfCaptured)
+        if (HUDManager.saved == HUDManager.numberOfCaptured && GameObject.FindWithTag("Kraken") == null)
         {
             FindObjectOfType<LevelManager>().LoadScene("Game Win Bonus");
         }
