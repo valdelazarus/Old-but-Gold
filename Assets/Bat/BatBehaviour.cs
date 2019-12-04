@@ -109,11 +109,11 @@ public class BatBehaviour : MonoBehaviour
         }
         if(dir.x < 0)
         {
-            transform.eulerAngles = new Vector3(0, -90, 0);
+            transform.eulerAngles = new Vector3(0, 90, 0);
         }
         else
         {
-            transform.eulerAngles = new Vector3(0, 90, 0);
+            transform.eulerAngles = new Vector3(0, -90, 0);
         }
 
         float dS = speed * Time.deltaTime;
@@ -132,7 +132,7 @@ public class BatBehaviour : MonoBehaviour
 
         //lookat player without rotating
         transform.LookAt(player);
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+        transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
     }
 
     void Die()
@@ -141,8 +141,9 @@ public class BatBehaviour : MonoBehaviour
         source.Pause();
         source.clip = dyingSound;
         source.Play();
+        anim.SetTrigger("Die");
 
-        Invoke("SelfDestroy", 2f);
+        Invoke("SelfDestroy", 1f);
     }
 
     void Shoot(Vector3 dir2P)
