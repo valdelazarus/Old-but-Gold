@@ -22,7 +22,7 @@ public class WinTrigger : MonoBehaviour
         {
             FindObjectOfType<LevelManager>().LoadScene("Game Win Bonus");
         }
-        else
+        else if (GameObject.FindWithTag("Kraken") == null)
         {
             FindObjectOfType<LevelManager>().LoadScene("Game Win");
         }
