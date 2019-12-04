@@ -696,8 +696,8 @@ GameObject:
   - component: {fileID: 1715763034675301092}
   - component: {fileID: 629340783965299602}
   m_Layer: 0
-  m_Name: Bat 1
-  m_TagString: Untagged
+  m_Name: Bat
+  m_TagString: Bat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -729,7 +729,7 @@ Animator:
   m_GameObject: {fileID: 3367926603788181467}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c9a63016c171c4ac9861b9238e25f481, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4819d8540ffa45a9bba627c15416721, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

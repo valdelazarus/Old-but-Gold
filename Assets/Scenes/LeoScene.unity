@@ -38701,15 +38701,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat
       objectReference: {fileID: 0}
-    - target: {fileID: 3367926603788181467, guid: d240f2836da2a497596197bdcf418bde,
-        type: 3}
-      propertyPath: m_TagString
-      value: Bat
-      objectReference: {fileID: 0}
-    - target: {fileID: 8533227828242776242, guid: d240f2836da2a497596197bdcf418bde,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d4819d8540ffa45a9bba627c15416721, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d240f2836da2a497596197bdcf418bde, type: 3}
