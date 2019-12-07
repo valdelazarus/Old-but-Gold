@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &4185693183155681889
+--- !u!114 &4287418907249546071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570acec0a5c10064a8afdadddcc2e3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
 --- !u!1001 &222789514893933285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20,6 +19,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1168922858800780977, guid: 8098e5bb4850447f6bcbcadbd14571c2,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168922858800780978, guid: 8098e5bb4850447f6bcbcadbd14571c2,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1168922858800780982, guid: 8098e5bb4850447f6bcbcadbd14571c2,
         type: 3}
       propertyPath: m_Name
@@ -99,16 +108,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1168922858800780978, guid: 8098e5bb4850447f6bcbcadbd14571c2,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1168922858800780977, guid: 8098e5bb4850447f6bcbcadbd14571c2,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8098e5bb4850447f6bcbcadbd14571c2, type: 3}
