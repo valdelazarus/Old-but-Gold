@@ -25,5 +25,9 @@ public class WateryDeath : MonoBehaviour
             //Destroy(other.gameObject);
             FindObjectOfType<LevelManager>().LoadScene("Game Over");
         }
+        else if (other.gameObject.tag.Equals("Goblin") || other.gameObject.tag.Equals("Pirate"))
+        {
+            Debug.Log("Enemy died a watery death!");
+        }
     }
 }
