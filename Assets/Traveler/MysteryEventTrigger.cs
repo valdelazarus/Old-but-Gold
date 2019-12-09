@@ -28,7 +28,8 @@ public class MysteryEventTrigger : MonoBehaviour
         {
             dialog.dialogDone = false;
             talked = false;
-            TeleportPlayerToSecretPath();
+            if (coinTotal > secretAmount)
+                TeleportPlayerToSecretPath();
         }
     }
 
