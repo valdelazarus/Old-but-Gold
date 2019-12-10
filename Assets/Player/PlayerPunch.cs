@@ -56,7 +56,7 @@ public class PlayerPunch : MonoBehaviour
         else if (other.gameObject.tag.Equals("Kraken"))
         {
             other.gameObject.GetComponent<KrakenBehaviour>().IncrementHits(punchStrength);
-        }
+        } 
     }
 
     

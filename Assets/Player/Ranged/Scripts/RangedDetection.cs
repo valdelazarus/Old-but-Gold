@@ -81,6 +81,9 @@ public class RangedDetection : MonoBehaviour
         {
             other.gameObject.GetComponent<KrakenBehaviour>().IncrementHits(rockStrength);
             GetComponent<BoxCollider>().enabled = false;
+        } else if (other.gameObject.tag == "Bomb")
+        {
+            Destroy(other.gameObject);
         }
         //need to check for hits in goblin/ specific enemy instead - as following line disables above behaviors (eg. no longer destroy enemy on hit)
         //GetComponent<BoxCollider>().enabled = false; //Removing hit collider so it only hits target once.

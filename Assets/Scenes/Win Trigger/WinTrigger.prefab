@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7308707042523619977}
   - component: {fileID: 8002915192602497101}
   - component: {fileID: 7940301150597540598}
+  - component: {fileID: 6445583116686793076}
   m_Layer: 0
   m_Name: WinTrigger
   m_TagString: Untagged
@@ -43,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9839325, y: 10.81616, z: 25.639782}
-  m_Center: {x: 0.99196625, y: 4.1939783, z: -0.49253082}
+  m_Size: {x: 3.7507782, y: 10.81616, z: 25.639782}
+  m_Center: {x: 0.6085434, y: 4.1939783, z: -0.49253082}
 --- !u!114 &7940301150597540598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,3 +58,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d345c109368534158a613fa732597d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6445583116686793076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835221846336529130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.488037, y: 24.480898, z: 28.552963}
+  m_Center: {x: 5.613159, y: 11.740449, z: 1.6110687}

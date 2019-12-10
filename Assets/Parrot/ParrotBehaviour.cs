@@ -16,16 +16,25 @@ public class ParrotBehaviour : MonoBehaviour
     public Animator anim;
     private float birdLifetime = 5;
     float dmgOnCollide = 0.1f;
+
+    public AudioClip dyingSound;
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
         Invoke("Die",birdLifetime);//destroy bird after it's lifetime
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
         hits = 0;
     }
     void Die()
     {
+        //play dying sound
+        source.Pause();
+        source.clip = dyingSound;
+        source.Play();
 
         Instantiate(particles, transform.position, transform.rotation);
         Destroy(gameObject);

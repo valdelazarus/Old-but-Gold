@@ -28,11 +28,15 @@ public class KrakenBehaviour : MonoBehaviour
     private bool isChasing;
     private bool isSpinning;
 
+    public AudioClip dyingSound;
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
 
         minHeight = this.transform.position.y;
         maxHeight = minHeight + 5f;
@@ -181,6 +185,11 @@ public class KrakenBehaviour : MonoBehaviour
 
     private void Die()
     {
+        //play dying sound
+        source.Pause();
+        source.clip = dyingSound;
+        source.Play();
+
         Destroy(this.gameObject);
     }
 

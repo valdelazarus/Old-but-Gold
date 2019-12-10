@@ -57,7 +57,8 @@ public class BatBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.position.x >= transform.position.x - attackDistance && player.position.x <= transform.position.x + attackDistance)
+        //if(player.position.x >= transform.position.x - attackDistance && player.position.x <= transform.position.x + attackDistance)
+        if(Vector3.Distance(transform.position, player.position) <= attackDistance)
         {
             ChangeState(States.Attack);
         }
@@ -164,13 +165,13 @@ public class BatBehaviour : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            HUDManager.RemoveHealth(dmgOnCollide);
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        HUDManager.RemoveHealth(dmgOnCollide);
+    //    }
+    //}
 
     void SelfDestroy()
     {
@@ -178,5 +179,11 @@ public class BatBehaviour : MonoBehaviour
 
         Instantiate(particles, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
     }
 }

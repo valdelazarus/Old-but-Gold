@@ -214,14 +214,14 @@ public class GoblinBehaviour : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-            if (collision.gameObject.tag=="Player")
-            {
-                HUDManager.RemoveHealth(dmgOnCollide);
-            //decrease player health
-            }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //        if (collision.gameObject.tag=="Player")
+    //        {
+    //            HUDManager.RemoveHealth(dmgOnCollide);
+    //        //decrease player health
+    //        }
+    //}
 
 
 

@@ -26,12 +26,15 @@ public class PirateBehaviour : MonoBehaviour
     public Transform[] waypoints;
     private int currentWaypoint;
 
+    public AudioClip dyingSound;
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
         hits = 0;
     }
 
@@ -107,6 +110,10 @@ public class PirateBehaviour : MonoBehaviour
 
     void Dead()
     {
+        //play dying sound
+        source.Pause();
+        source.clip = dyingSound;
+        source.Play();
 
         anim.SetBool("isDead", true);
         Invoke("Die", 3);
@@ -163,14 +170,14 @@ public class PirateBehaviour : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            HUDManager.RemoveHealth(0.1f);
-            //decrease player health
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        HUDManager.RemoveHealth(0.1f);
+    //        //decrease player health
+    //    }
+    //}
 
 
 
