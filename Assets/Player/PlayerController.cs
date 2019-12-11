@@ -92,6 +92,8 @@ public class PlayerController : MonoBehaviour
         actualSpeed = movement * speed;
         //rb.velocity = Vector3.right * actualSpeed; REMOVED/CHANGED SO THAT IT DOESN'T AFFECT THE JUMP VELOCITY, ONLY THE HORIZONTAL MOVEMENT
         rb.velocity = new Vector3(actualSpeed, rb.velocity.y, 0.0f);
+
+        this.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
     void RotateTowardsWalkingDirection()
